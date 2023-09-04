@@ -1,0 +1,580 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Apple.jpg'); height:800px; width: 100%; " alt="AppleTree"></div>
+            <div style="position: absolute; bottom: 250px; left: 450px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>LEGILE MISCARII</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Sunt Legile Miscarii</b></h1>
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+                <b style="font-size:23px;">L</b>egile mișcării a lui Newton sunt trei legi de bază ale mecanicii clasice care descriu relația dintre mișcarea unui obiect și forțele care acționează asupra acestuia.
+                <br />Aceste legi pot fi definite după cum urmează:
+            </div>
+            <ol style="padding-right:150px; padding-left:150px;font-size:17px">
+                <li><b>Un corp rămâne în repaus sau în mișcare cu o viteză constantă în linie dreaptă, dacă nu este acționat de o forță.</b></li>
+                <li><b>Când un corp este acționat de o forță, viteza de schimbare a impulsului său este egală cu forța.</b></li>
+                <li><b>Dacă două corpuri exercită forțe unul asupra celuilalt, aceste forțe au aceeași magnitudine, dar direcții opuse.</b></li>
+            </ol>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Principiul I Al Mecanicii</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br />
+
+
+        <div class="section4">
+            <div style=" color: white; align-items: center; justify-content: center" class="container">
+                <section style="padding-right: 125px;padding-left:30px;" class="image">
+                    <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/First_Law.jpg" alt="1st Law" height="300" width="300" />
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-left:125px;padding-right:460px;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">P</b>rincipiul inertiei introduce notiunea de forta. Forta este o marime vectoriala prin care un corp actioneaza asupra altuia, transmitand miscarea mecanica. De transmiterea interactiunilor mecanice sunt raspunzatoare si campurile de forte.
+            Conform acestui principiu, rezultanta egala cu zero a unui numar oarecare de forte este echivalenta cu inexistenta fortei. Miscarea unui corp asupra caruia actioneaza mai multe forte a caror rezultanta este nula sau asupra caruia nu actioneaza nicio forta se numeste miscare inertiala.
+            Deoarece miscarea este caracterizata in raport cu un sistem de referinta ales arbitrar, miscarea are caracter relativ. in acest sens, Galilei a formulat principiul relativitatii miscarii mecanice. Sa consideram un calator aflat intr-un vehicul care se deplaseaza rectiliniu si uniform. Calatorul se poate gasi intr-una din starile:
+        </div>
+        <div class="section3">
+            <ul>
+                <li><b>In repaus, in raporst cu sistemul de referinta legat de vehicul</b></li>
+                <li><b>In miscare rectilinie uniforma cu o viteza egala cu cea a vehiculului fata de un sistem de referinta legat de Pamant</b></li>
+                <li><b>In miscare accelerata, in raport cu un sistem de referinta legat de Soare, deoarece Pamantul este in miscare accelerata fata de Soare</b></li>
+            </ul>
+        </div>
+        <div class="section3">
+            Toate sistemele de referinta ce se misca rectiliniu uniform se numesc sisteme de referinta inertiale.
+            In aceste sisteme de referinta este valabil principiul inertiei.
+        </div>
+    </section>
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Principiul Al II-lea Al Mecanicii</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br />
+
+
+        <div class="section4">
+            <div style=" color: white; align-items: center; justify-content: center" class="container">
+                <section style="padding-right:30px;padding-left:125px;" class="image">
+                    <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Secound_Law.jpg" alt="2nd Law" height="300" width="300" />
+                </section>
+            </div>
+        </div>
+        <div class="section3">
+            <section style="padding-top:70px;padding-left:460px;padding-right:125px;" class="text">
+                <b style="font-size:23px;">N</b>ewton a descoperit faptul că o forță care acționează asupra unui corp îi imprimă acestuia o accelerație, proporțională cu forța și invers proporțională cu masa corpului.
+                Masa este o măsură a cantității de materie conținută în corp. Newton introduce noțiunea de cantitate de mișcare, ceea ce astăzi se numește impuls. Aceasta este o mărime vectorială egală cu produsul dintre masă și vectorul viteză.
+                Pornind de la impulsul mecanic al corpului, putem deduce forma cea mai completă a definiției forței pentru un corp de masă constantă.
+                Derivata impulsului mecanic în raport cu timpul este:
+                Principiul al doilea al mecanicii introduce noțiunea de forță ca fiind derivata impulsului în raport cu timpul sau folosind definiția impulsului.
+                În mecanica newtoniană, se consideră că masa este constantă (independentă de viteză) cât timp se păstrează integritatea corpului.
+            </section>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Principiul Al III-lea Al Mecanicii</b></h1>
+        </div>
+        <br /><br /><br /><br /><br />
+        <div class="section4">
+            <div style=" color: white; align-items: center; justify-content: center" class="container">
+                <section style="padding-right:125px;padding-left:30px;" class="image">
+                    <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Third_Law.png" alt="3rd Law" height="300" width="300" />
+                </section>
+            </div>
+        </div>
+        <section style="padding-top:50px;padding-left:125px;padding-right:460px;color:white;" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">C</b>ând un corp acționează asupra altui corp cu o forță (numită forță de acțiune), cel de-al doilea corp acționează și el asupra primului cu o forță (numită forță de reacțiune) de aceeași mărime și de aceeași direcție, dar de sens contrar.
+                Acest principiu este cunoscut și sub numele de Principiul acțiunii și reacțiunii.
+            </div>
+            <br /><br />
+            <div class="section3">
+                <h3><b>Principiul suprapunerii forțelor</b></h3>
+                <b style="font-size:23px;">D</b>acă mai multe forțe acționează în același timp asupra unui corp, fiecare va produce propria sa accelerație, accelerația rezultantă fiind suma vectorială a accelerațiilor individuale.
+            </div>
+        </section>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Sir Isaac Newton</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">P</b>rimul său articol științific a fost publicat despre acest domeniu în 1672 în Proceedings of the Royal Society.
+                În acest timp a studiat refracția luminii, demonstrând că o prismă de sticlă poate descompune lumina albă într-un spectru de culori și că adăugarea unei lentile și a unei alte prisme poate recompune lumina albă.
+                Pe baza acestei descoperiri a construit un telescop cu reflexie, care a fost prezentat în 1671 la Royal Society.
+            </section>
+        </section>
+        <br /><br />
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <div class="section4">
+                <section style="padding-right:30px;padding-left:125px;" class="image">
+                    <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Newton.jpg" alt="Newton" height="450" width="300" />
+                </section>
+            </div>
+            <div class="section5">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Lucrări în domeniul opticii</b></h3></li>
+                    </ul>
+                    <b style="font-size:23px;">P</b>rimul său articol științific a fost publicat despre acest domeniu în 1672 în Proceedings of the Royal Society.
+                    În acest timp a studiat refracția luminii, demonstrând că o prismă de sticlă poate descompune lumina albă într-un spectru de culori și că adăugarea unei lentile și a unei alte prisme poate recompune lumina albă.
+                    Pe baza acestei descoperiri a construit un telescop cu reflexie, care a fost prezentat în 1671 la Royal Society.
+                </div>
+            </div>
+            
+            <div class="section6">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Teoria gravitației</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">I</b>n 1679 Newton reia studiile sale asupra gravitației și efectelor ei asupra orbitelor planetelor, referitoare la legile lui Kepler cu privire la mișcarea corpurilor cerești, și publică rezultatele în lucrarea De Motu Corporum ("Asupra mișcării corpurilor").
+                    În lucrarea Philosophiae naturalis principia mathematica ("Principiile matematice ale filozofiei naturale"), Newton stabilește cele trei legi universale ale mișcării, referitoare la inerția de repaus și mișcare și la principiul acțiune-reacțiune.
+                    Folosește pentru prima dată termenul latin gravitas (greutate), pentru determinarea analitică a forțelor de atracție, și definește Legea atracției universale.
+                </div>
+            </div>
+            <div class="section7">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Opere filozofice și religioase</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">N</b>ewton a scris numeroase opuscule cu subiecte filozofice și religioase asupra interpretării unor texte din Biblie, sub influența spiritualismului mistic al lui Henry More și a convingerii în unitatea universului împotriva dualismului cartezian.
+                    Lucrările sale The Chronology of Ancient Kingdoms Amended și Observations Upon the Prophecies of Daniel and the Apocalypse of St. John au fost publicate după moartea sa.
+                    Newton a scris mai mult despre religie, alchimie și ocultism decât tot restul scrierilor sale la un loc.
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br /><br /><br />
+</body>
+</html>

@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/higgs4.jpg'); height: 800px; width: 100%; " alt="Bosson"></div>
+            <div style="position: absolute; bottom: 250px; left: 450px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>HIGGS BOSSON</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Este Bosonul Higgs</b></h1>
+        </div>
+
+        <br /><br />
+
+
+        <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">B</b>osonul Higgs, uneori numit particulă Higgs, este o particulă elementară din modelul standard al fizicii particulelor, produsă de excitația cuantică a câmpului Higgs, unul dintre câmpurile din teoria fizicii particulelor.
+                În modelul standard, particula Higgs este un boson scalar masiv cu spin zero, paritate egală (pozitivă), fără sarcină electrică și fără sarcină de culoare care se cuplează cu (interacționează cu) masă.
+                Este, de asemenea, foarte instabil, degradându-se în alte particule aproape imediat după generare.
+            </div>
+
+            <br /><br />
+
+            <div class="section3">
+                Câmpul Higgs este un câmp scalar cu două componente neutre și două încărcate electric care formează un dublu complex al simetriei slabe a isospinului SU(2).
+                Potențialul său „în formă de pălărie mexicană” îl face să ia o valoare diferită de zero peste tot (inclusiv spațiul gol), ceea ce rupe simetria slabă de izospin a interacțiunii electroslab și, prin mecanismul Higgs, dă masă multor particule.
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Modelul Standard</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br />
+
+
+        <div class="section4">
+            <div style=" color: white; align-items: center; justify-content: center" class="container">
+                <section style="padding-right: 125px;padding-left:30px;" class="image">
+                    <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Standart.png" alt="Model Standart" height="275" width="350" />
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-left:125px;padding-right:500px;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">M</b>odelul standard al fizicii particulelor este teoria care descrie trei dintre cele patru forțe fundamentale cunoscute din univers și clasifică toate particulele elementare cunoscute.
+            A fost dezvoltat în etape pe parcursul ultimei jumătăți a secolului al XX-lea, prin munca multor oameni de știință din întreaga lume, formularea actuală fiind finalizată la mijlocul anilor 1970, la confirmarea experimentală a existenței quarcilor.
+            De atunci, dovezile cuarcului superior, neutrinul tau și bosonul Higgs au adăugat mai multă credibilitate Modelului standard. În plus, modelul standard a prezis diferite proprietăți ale curenților neutri slabi și ale bosonilor W și Z cu mare precizie.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Deși se crede că modelul standard este teoretic auto-consecvent și a demonstrat un oarecare succes în furnizarea de predicții experimentale, el lasă unele fenomene fizice neexplicate și, prin urmare, nu este o teorie completă a interacțiunilor fundamentale.
+            De exemplu, nu explică pe deplin asimetria barionică, nu încorporează întreaga teorie a gravitației așa cum este descrisă de relativitatea generală sau nu explică expansiunea accelerată a universului, așa cum este posibil descrisă de energia întunecată. Modelul nu conține nicio particulă de materie întunecată viabilă care să posede toate proprietățile necesare deduse din cosmologia observațională.
+            De asemenea, nu încorporează oscilațiile neutrinilor și masele lor diferite de zero.
+        </div>
+    </section>
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Properties of the Higgs field</b></h1>
+        </div>
+
+
+        <br /><br /><br />
+
+        <section style="padding-top:70px;padding-left:125px;padding-right:125px;" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">I</b>n modelul standard, câmpul Higgs este un câmp tahionic scalar – scalar adică nu se transformă sub transformările Lorentz, iar tahionic înseamnă că câmpul are masă imaginară și, în anumite configurații, trebuie să sufere ruperea simetriei.
+                Este format din patru componente: două neutre și două câmpuri de componente încărcate. Atât componentele încărcate, cât și unul dintre câmpurile neutre sunt bosoni Goldstone, care acționează ca componente longitudinale de a treia polarizare a bosonilor masivi W+, W− și Z.
+                Cuantumul componentei neutre rămase corespunde (și este realizat teoretic ca) bosonului Higgs masiv.
+                Această componentă poate interacționa cu fermionii prin cuplarea Yukawa pentru a le da și masa.
+            </div>
+            <br /><br />
+            <div class="section3">
+                <b style="font-size:23px;">D</b>in punct de vedere matematic, câmpul Higgs are masă imaginară și, prin urmare, este un câmp tahionic.
+                În timp ce tahionii (particulele care se mișcă mai repede decât lumina) sunt un concept pur ipotetic, câmpurile cu masă imaginară au ajuns să joace un rol important în fizica modernă.
+                În niciun caz, excitațiile nu se propagă mai repede decât lumina în astfel de teorii - prezența sau absența. a unei mase tahionice nu are niciun efect asupra vitezei maxime a semnalelor (nu există o încălcare a cauzalității).
+                În loc de particule mai rapide decât lumina, masa imaginară creează o instabilitate: orice configurație în care una sau mai multe excitații de câmp sunt tahionice trebuie să se descompună spontan, iar configurația rezultată nu conține tahioni fizici.
+                Acest proces este cunoscut sub numele de condensare tahionica și acum se crede că este explicația pentru modul în care mecanismul Higgs însuși apare în natură și, prin urmare, motivul din spatele ruperii simetriei electroslăbite.
+            </div>
+            <br /><br />
+            <div class="section3">
+                <b style="font-size:23px;">D</b>eși noțiunea de masă imaginară ar putea părea tulburătoare, doar câmpul, și nu masa în sine, este cuantizat.
+                Prin urmare, operatorii de câmp din punctele separate asemănătoare spațiului fac încă naveta, iar informațiile și particulele încă nu se propagă mai repede decât lumina.
+                Condensarea tahionica conduce un sistem fizic care a atins o limită locală – și s-ar putea aștepta naiv să producă tahioni fizici – către o alternativă. stare stabilă în care nu există tahioni fizici.
+                Odată ce un câmp tahionic, cum ar fi câmpul Higgs, atinge minimul potențialului, cuantele sale nu mai sunt tahioni, ci mai degrabă sunt particule obișnuite, cum ar fi bosonul Higgs.
+
+            </div>
+        </section>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Mecanismul Higgs</b></h1>
+        </div>
+        <br />
+        <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">C</b> În urma lucrărilor din 1963 și începutul anului 1964, trei grupuri de cercetători au dezvoltat în mod independent aceste teorii mai complet, în ceea ce a devenit cunoscut sub numele de lucrări de rupere a simetriei PRL din 1964.
+                Toate cele trei grupuri au ajuns la concluzii similare și pentru toate cazurile, nu doar pentru unele cazuri limitate.
+                Ei au arătat că condițiile pentru simetria electroslabă ar fi „încălcate” dacă ar exista un tip neobișnuit de câmp în întregul univers și, într-adevăr, nu ar exista bosoni Goldstone și unii bosoni existenți ar dobândi masă.
+                <br /><br />
+                Câmpul necesar pentru ca acest lucru să se întâmple (care era pur ipotetic la acea vreme) a devenit cunoscut sub numele de câmpul Higgs și mecanismul prin care a dus la ruperea simetriei, cunoscut sub numele de mecanismul Higgs.
+            </div>
+        </section>
+    </section>
+
+    <br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Campul Higgs</b></h1>
+        </div>
+        <br />
+        <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">M</b>odelul standard include un câmp de tipul necesar pentru a „rupe” simetria electroslabă și pentru a da particulelor masa lor corectă.
+                Acest câmp, numit „Câmpul Higgs”, există în tot spațiul și încalcă unele legi de simetrie ale interacțiunii electroslăbite, declanșând mecanismul Higgs.
+                Prin urmare, determină bosonii gauge W și Z ai forței slabe să fie masivi la toate temperaturile sub o valoare extrem de mare. Când bosonii forței slabe dobândesc masă, aceasta afectează distanța pe care o pot parcurge liber, care devine foarte mică, potrivindu-se de asemenea cu descoperirile experimentale.
+                În plus, s-a realizat mai târziu că același câmp ar explica, într-un mod diferit, de ce alți constituenți fundamentali ai materiei au masă.
+                <br /><br />
+                Spre deosebire de toate celelalte câmpuri cunoscute, cum ar fi câmpul electromagnetic, câmpul Higgs este un câmp scalar și are o valoare medie diferită de zero în vid.
+            </div>
+        </section>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Peter Ware Higgs</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">P</b>eter Ware Higgs este un fizician teoretician britanic, profesor emerit la Universitatea din Edinburgh și laureat al Premiului Nobel pentru munca sa asupra masei particulelor subatomice.
+                <br /><br />
+                Peter Higgs, împreună cu câțiva alți fizicieni, au propus în mod independent existența bosonului Higgs și a mecanismului Higgs în anii 1960.
+                Lucrarea sa inovatoare a pus bazele teoretice pentru bosonul Higgs și rolul acestuia în fizica particulelor.
+                Descoperirea bosonului Higgs la Large Hadron Collider (LHC) în 2012 a confirmat validitatea ideilor lui Higgs și i-a adus Premiul Nobel pentru Fizică în 2013, împreună cu François Englert.
+                Peter Higgs este recunoscut pe scară largă ca una dintre figurile cheie în dezvoltarea Modelului Standard și înțelegerea noastră a originii masei în univers.
+            </section>
+        </section>
+        <br /><br />
+              <div style=" color: white; align-items: center; justify-content: center" class="container">
+                  <div class="section4">
+                      <section style="padding-right:30px;padding-left:125px;" class="image">
+                          <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Higgs.jpg" alt="Higgs" height="450" width="300" />
+                      </section>
+                  </div>
+                  <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                      <div class="section5">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Mecanismul Higgs și Bosonul Higgs</b></h3></li>
+                          </ul>
+                          <b style="font-size:23px;">I</b>n anii 1960, Peter Higgs, împreună cu alți fizicieni precum François Englert, Robert Brout, Tom Kibble, Carl Hagen și Gerald Guralnik, au propus în mod independent existența bosonului Higgs și a mecanismului Higgs.
+                          Ei au prezentat teoria pentru a explica modul în care particulele dobândesc masă prin interacțiuni cu câmpul Higgs.
+                      </div>
+                      <div class="section5">
+                          <ul>
+                              <li><h3><b>Recunoaștere și Premiul Nobel</b></h3></li>
+                          </ul>
+                          Descoperirea bosonului Higgs prin experimente la Large Hadron Collider (LHC) în 2012 a validat ideile lui Higgs. În 2013, Peter Higgs, împreună cu François Englert, au primit Premiul Nobel pentru Fizică pentru predicțiile lor teoretice despre bosonul Higgs, confirmând mecanismul Higgs.
+                      </div>
+                      <div class="section5">
+                          <ul>
+                              <li><h3><b>Carieră Academică</b></h3></li>
+                          </ul>
+                          Higgs și-a finalizat studiile de licență în fizică la King's College, Universitatea din Londra, iar mai târziu și-a obținut doctoratul.
+                          în fizică teoretică de la King's College sub supravegherea lui Christopher H. Llewellyn Smith.
+                          A deținut diverse funcții academice de-a lungul carierei sale, inclusiv la Universitatea din Edinburgh, unde și-a petrecut cea mai mare parte a vieții sale profesionale.
+                      </div>
+                      <div class="section5">
+                          <ul>
+                              <li><h3><b>Moștenire și Impact</b></h3></li>
+                          </ul>
+                          Contribuțiile lui Higgs la fizica particulelor și descoperirea bosonului Higgs au avut un impact profund asupra înțelegerii noastre asupra universului.
+                          Confirmarea mecanismului Higgs a oferit o piesă esențială a puzzle-ului în explicarea modului în care particulele dobândesc masă și a solidificat Modelul Standard ca cea mai bună descriere actuală a particulelor fundamentale și a interacțiunilor lor.
+                      </div>
+                  </div>
+              </div>
+    </section>
+    <br /><br /><br /><br />
+</body>
+</html>

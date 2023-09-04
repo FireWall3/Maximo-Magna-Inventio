@@ -1,0 +1,678 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Quantuum.jpg'); height: 800px; width: 100%; " alt="AppleTree"></div>
+            <div style="position: absolute; bottom: 250px; left: 335px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>MECANICA CUANTICA</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+    <section>
+        <div class="section2">
+            <h1 style="padding-left: 125px; font-size: 34px;"><b>Ce Este Mecanica Cuantica</b></h1>
+        </div>
+
+
+        <br /><br />
+
+
+        <div class="container">
+            <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+                <div class="section3">
+                    <b style="font-size:23px;">M</b>ecanica cuantică și-a avut originile la sfârșitul secolului al XIX-lea și începutul secolului al XX-lea, pe măsură ce fizicienii încercau să înțeleagă comportamentul atomilor și al particulelor subatomice. Una dintre primele descoperiri a avut loc în 1900, când Max Planck a propus o teorie a radiației corpului negru care implica cuantizarea energiei.
+                    Planck a sugerat că energia nu este continuă, ci mai degrabă este formată din pachete discrete sau cuante. Această idee a fost revoluționară, deoarece contrazicea concepția predominantă conform căreia energia era continuă și putea lua orice valoare.
+                    Pe baza lucrării lui Planck, Albert Einstein a propus teoria efectului fotoelectric în 1905.
+                    Această teorie a explicat modul în care electronii sunt emiși de pe o suprafață metalică atunci când este expusă la lumină.
+                    Einstein a sugerat că lumina este alcătuită din particule discrete, sau fotoni, și că energia fiecărui foton este legată de frecvența acestuia.
+                </div>
+
+                <br /><br />
+
+                <div class="section3">
+                    <b style="font-size:23px;">O</b> altă contribuție majoră a venit de la Niels Bohr, care a dezvoltat un model al atomului în 1913 care a încorporat ideile de cuantizare și niveluri de energie discrete.
+                    Conform modelului lui Bohr, electronii dintr-un atom pot ocupa doar anumite niveluri de energie și pot sări între aceste niveluri absorbind sau emițând fotoni de lumină.
+                    Dezvoltarea mecanicii cuantice a fost influențată și de lucrările lui Werner Heisenberg, Erwin Schrödinger și alți fizicieni, care au dezvoltat modele matematice care ar putea descrie comportamentul particulelor la nivel atomic și subatomic.
+                    Aceste modele au încorporat conceptele de dualitate val-particulă, incertitudine, suprapunere și încurcare și au oferit un nou cadru pentru înțelegerea comportamentului materiei și energiei la nivel cuantic.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Concepte Fundamentale</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br />
+
+
+
+    <div style=" color: white; align-items: center; justify-content: center" class="container">
+        <section style="padding-left:125px;padding-right:125px;" class="text">
+            <div class="section3">
+                <ul>
+                    <li><h2><b>Dualitate undă-particulă</b></h2></li>
+                </ul>
+                <b style="font-size:23px;">U</b>na dintre cele mai contraintuitive idei din mecanica cuantică este conceptul de dualitate unda-particulă.
+                Aceasta înseamnă că particulele, cum ar fi electronii și fotonii, pot prezenta atât un comportament ca undă, cât și cel al particulelor, în funcție de modul în care sunt observate.
+                De exemplu, în celebrul experiment cu dublă fante, electronii sunt trageți unul câte unul printr-o pereche de fante și creează un model de interferență pe un ecran în spatele fantelor, ca și cum s-ar comporta ca undele.
+                Cu toate acestea, atunci când experimentul este observat mai îndeaproape, electronii se comportă ca niște particule, iar calea lor prin fante poate fi detectată.
+                Această dualitate este un aspect fundamental al mecanicii cuantice și ne provoacă înțelegerea de zi cu zi a comportamentului materiei și energiei.
+            </div>
+            <br /><br />
+            <div class="section4">
+                <ul>
+                    <li><h2><b>Principiul incertitudinii</b></h2></li>
+                </ul>
+                <br />
+                <b style="font-size:23px;">P</b>rincipiul incertitudinii este un alt concept cheie în mecanica cuantică și afirmă că este imposibil să se măsoare simultan anumite proprietăți ale unei particule cu o precizie arbitrară.
+                Acest principiu rezultă din dualitatea undă-particulă a mecanicii cuantice și are implicații importante pentru modul în care observăm și măsurăm particulele.
+                De exemplu, dacă măsurăm poziția unei particule cu mare precizie, introducem neapărat o mare incertitudine în impulsul acesteia și invers.
+                Aceasta înseamnă că există limite fundamentale ale capacității noastre de a observa și măsura particulele în lumea cuantică.
+            </div>
+            <br /><br />
+            <div class="section5">
+                <ul>
+                    <li><h2><b>Suprapunere</b></h2></li>
+                </ul>
+                <b style="font-size:23px;">U</b>n alt concept important în mecanica cuantică este suprapunerea, care se referă la ideea că o particulă poate exista în mai multe stări în același timp.
+                Aceasta înseamnă că o particulă poate fi în două sau mai multe locuri sau stări simultan. De exemplu, un electron dintr-un atom poate exista într-o suprapunere a diferitelor niveluri de energie și se poate deplasa între aceste niveluri prin absorbția sau emiterea unui foton de lumină.
+                Această suprapunere este un aspect cheie al mecanicii cuantice și are implicații importante pentru comportamentul materiei și energiei la scară atomică și subatomică.
+            </div>
+            <br /><br />
+            <div class="section6">
+                <ul>
+                    <li><h2><b>Entanglement</b></h2></li>
+                </ul>
+                <b style="font-size:23px;">Î</b>ntanglementul este un aspect ciudat și fascinant al mecanicii cuantice și se referă la ideea că particulele pot deveni corelate în moduri care nu pot fi explicate de fizica clasică.
+                Când două particule devin încurcate, stările lor devin legate, astfel încât starea unei particule este strâns legată de starea celeilalte particule, chiar dacă sunt îndepărtate.
+                Această încurcătură a fost observată experimental și are implicații importante pentru comportamentul materiei și energiei în lumea cuantică.
+            </div>
+            <br /><br />
+            <div class="section7">
+                <ul>
+                    <li><h2><b>Probabilitatea</b></h2></li>
+                </ul>
+                <b style="font-size:23px;">Î</b>n cele din urmă, mecanica cuantică se bazează în mare măsură pe probabilitate, deoarece este imposibil să se prezică cu certitudine comportamentul unei particule.
+                În schimb, mecanica cuantică folosește distribuțiile de probabilitate pentru a descrie probabilitatea unor rezultate diferite.
+                Această natură probabilistică a mecanicii cuantice rezultă din principiul incertitudinii și dualitatea undă-particulă și are implicații importante pentru modul în care înțelegem și modelăm comportamentul materiei și energiei la scară atomică și subatomică.
+            </div>
+            <br /><br /><br />
+        </section>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Consecințe</b></h1>
+    </div>
+
+    <br />
+
+    <div style=" color: white; align-items: center; justify-content: center" class="container">
+        <section style="padding-top:70px;padding-left:125px;padding-right:125px;" class="text">
+
+            <div class="section3">
+                <ul>
+                    <li>
+                        <h2><b>Cuantizarea Energiei:</b></h2>
+                        <b style="font-size:23px;">U</b>na dintre cele mai importante consecințe ale mecanicii cuantice este cuantizarea energiei.
+                        Aceasta înseamnă că energia poate exista doar în pachete discrete, sau cuante, mai degrabă decât într-un interval continuu de valori.
+                        De exemplu, electronii dintr-un atom pot exista doar în anumite niveluri de energie discrete și se pot deplasa între aceste niveluri prin absorbția sau emiterea unui foton de lumină.
+                        Această cuantificare a energiei are implicații importante pentru comportamentul materiei și energiei la scară atomică și subatomică.
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+            <br />
+
+
+            <div class="section4">
+                <ul>
+                    <li>
+                        <h2><b>Tunnelarea:</b></h2>
+                        <b style="font-size:23px;">O</b> altă consecință a mecanicii cuantice este tunelarea, care se referă la capacitatea particulelor de a trece prin bariere care ar fi impenetrabile conform fizicii clasice.
+                        Acest lucru se întâmplă deoarece particulele din mecanica cuantică pot exista într-o stare de suprapunere, ceea ce înseamnă că pot fi în două sau mai multe locuri sau stări simultan.
+                        Ca rezultat, particulele pot traversa bariere prin existența în esență pe ambele părți ale barierei în același timp.
+                        Acest fenomen are implicații importante pentru comportamentul materiei și energiei la scară atomică și subatomică.
+                    </li>
+                </ul>
+            </div>
+
+
+            <br />
+
+
+            <div class="section5">
+                <ul>
+                    <li>
+                        <h2><b>Nonlocalitatea:</b></h2>
+                        <b style="font-size:23px;">M</b>ecanica cuantică prezice, de asemenea, nonlocalitatea, care se referă la capacitatea particulelor de a fi corelate instantaneu între ele, chiar dacă sunt separate de distanțe mari.
+                        Acest fenomen este legat de întanglement, care este un aspect ciudat și fascinant al mecanicii cuantice în care particulele devin corelate în moduri care nu pot fi explicate de fizica clasică.
+                        Nonlocalitatea are implicații importante pentru modul în care înțelegem comportamentul materiei și energiei la scară atomică și subatomică.
+                    </li>
+                </ul>
+            </div>
+
+
+            <br />
+
+
+            <div class="section6">
+                <ul>
+                    <li>
+                        <h2><b>Calculul Cuantic:</b></h2>
+                        <b style="font-size:23px;">O</b> altă consecință a mecanicii cuantice este potențialul de calcul cuantic, care ar permite crearea de computere care ar putea rezolva anumite probleme mult mai rapid decât computerele clasice.
+                        Acest lucru se datorează faptului că calculatoarele cuantice pot profita de natura probabilistică a mecanicii cuantice pentru a efectua anumite calcule în paralel, mai degrabă decât secvenţial ca computerele clasice.
+                        Calculul cuantic este încă în fazele sale incipiente de dezvoltare, dar are potențialul de a revoluționa domenii precum criptografia și știința materialelor.
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Erwin Schrödinger</b></h1>
+        <br /><br /><br />
+        <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+            <b style="font-size:23px;">I</b>rwin Schrödinger a fost un fizician austriac care este cel mai bine cunoscut pentru contribuțiile sale la dezvoltarea mecanicii cuantice.
+            S-a născut la 12 august 1887, la Viena, Austria, și a murit la 4 ianuarie 1961, la Viena.
+            Schrödinger a studiat fizica la Universitatea din Viena, unde și-a luat doctoratul în 1910.
+            În 1925, Schrödinger a dezvoltat o ecuație de undă care a descris comportamentul sistemelor mecanice cuantice, cunoscută acum sub numele de ecuația Schrödinger.
+            Această ecuație a revoluționat domeniul mecanicii cuantice și a oferit un cadru matematic pentru studiul atomilor și moleculelor.
+            Pe lângă munca sa în fizică, Schrödinger a fost interesat și de filosofie și a scris pe larg despre relația dintre mecanica cuantică și filozofie.
+            Cartea sa „Ce este viața?” este considerat un clasic în domeniul biologiei moleculare și a contribuit la inspirarea descoperirii structurii ADN-ului.
+        </section>
+    </div>
+
+
+    <br /><br />
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-right:30px;padding-left:125px;" class="image">
+                <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Erwin-Schrodinger.png" alt="Schrodinger" height="450" width="300" />
+            </section>
+        </div>
+    </div>
+
+    <section style="padding-left:460px;padding-right:125px;color:white;" class="text">
+        <div class="section3">
+            <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                <li><h3><b>Pisica lui Schrödinger</b></h3></li>
+            </ul>
+        </div>
+        <div class="section3">
+            <b style="font-size:23px;">P</b>isica lui Schrödinger este un experiment de gândire celebru pe care l-a propus în 1935 ca o modalitate de a ilustra natura ciudată și contraintuitivă a mecanicii cuantice.
+            Experimentul implică o pisică într-o cutie sigilată care conține o fiolă cu otravă, o sursă radioactivă și un contor Geiger.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Experimentul funcționează după cum urmează: sursa radioactivă are șanse de 50% să se descompună într-o oră, ceea ce va face ca contorul Geiger să declanșeze și să elibereze otrava, ucigând pisica.
+            Potrivit mecanicii cuantice, înainte ca cutia să fie deschisă, pisica se află într-o stare de suprapunere, ceea ce înseamnă că este atât vie, cât și moartă în același timp.
+            Numai atunci când cutia este deschisă și observată, starea pisicii devine certă și fie vie, fie moartă.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Experimentul de gândire evidențiază natura ciudată și paradoxală a mecanicii cuantice, unde particulele pot exista în mai multe stări simultan și pot fi descrise doar probabilistic.
+            De asemenea, ridică întrebări despre rolul observației și măsurării în mecanica cuantică, precum și despre natura realității și relația dintre observator și observat.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Este important de menționat că Schrödinger a propus experimentul ca o critică a interpretării de la Copenhaga a mecanicii cuantice, care era interpretarea dominantă la acea vreme.
+            De fapt, nu credea că pisica era vie și moartă în același timp, ci mai degrabă a folosit experimentul ca o modalitate de a ilustra problemele cu interpretarea.
+            Cu toate acestea, experimentul a devenit un simbol popular și de durată al ciudățeniei mecanicii cuantice.
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Werner Heisenberg</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br />
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-right:125px;padding-left:30px;" class="image">
+                <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Breaking%20Bad.jpg" alt="Heisenberg" height="450" width="300" />
+            </section>
+        </div>
+    </div>
+
+    <br />
+
+    <section style="padding-left:125px;padding-right:460px;color:white;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">W</b>erner Heisenberg a fost un fizician teoretician german, cel mai bine cunoscut pentru contribuțiile sale la dezvoltarea mecanicii cuantice.
+            S-a născut la 5 decembrie 1901, la Würzburg, Germania, și a murit la 1 februarie 1976, la München, Germania.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Heisenberg a studiat fizica la Universitatea din München și și-a luat doctoratul în 1923.
+            Apoi a lucrat ca asistent al lui Max Born la Universitatea din Göttingen, unde a început să-și dezvolte ideile despre mecanica cuantică.
+        </div>
+        <br /><br />
+        <div class="section3">
+            În 1925, Heisenberg a dezvoltat principiul incertitudinii, care afirmă că anumite perechi de proprietăți fizice, cum ar fi poziția și impulsul, nu pot fi ambele cunoscute sau măsurate cu precizie simultan.
+            Acest principiu este un concept fundamental în mecanica cuantică și are implicații profunde pentru modul în care înțelegem comportamentul particulelor la nivel subatomic.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Lucrările lui Heisenberg în mecanica cuantică au inclus și dezvoltarea mecanicii matriceale, care a oferit un nou cadru matematic pentru înțelegerea comportamentului particulelor la nivel cuantic.
+            A primit Premiul Nobel pentru Fizică în 1932 pentru contribuțiile sale la dezvoltarea mecanicii cuantice.
+        </div>
+        <br /><br />
+        <div class="section3">
+            In timpul celui de-al Doilea Război Mondial, Heisenberg a lucrat la programul german de arme nucleare.
+            Cu toate acestea, el nu a avut succes în eforturile sale de a dezvolta o armă nucleară funcțională, iar unii au speculat că a încetinit în mod deliberat proiectul sau l-a sabotat pentru a împiedica naziștii să achiziționeze arme nucleare.
+            După război, Heisenberg a lucrat pentru a reconstrui cercetarea în fizică în Germania și a devenit un avocat important al cooperării internaționale în știință.
+            De asemenea, a adus contribuții semnificative la studiul razelor cosmice și al fizicii particulelor.
+            Heisenberg a fost o figură complexă și controversată, iar contribuțiile sale la dezvoltarea mecanicii cuantice și a fizicii nucleare au avut un impact profund asupra cursului fizicii moderne.
+        </div>
+    </section>
+    <br /><br /><br /><br /><br />
+
+</body>
+</html>

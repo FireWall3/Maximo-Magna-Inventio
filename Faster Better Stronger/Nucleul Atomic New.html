@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Nucleul%20Atomic.jpeg'); height: 800px; width: 100%; " alt="Atom"></div>
+            <div style="position: absolute; bottom: 250px; left: 400px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>NUCLEUL ATOMIC</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Este Nucleul Atomic</b></h1>
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+                <b style="font-size:23px;">N</b>ucleul atomic este regiunea mică și densă formată din protoni și neutroni în centrul unui atom, descoperită în 1911 de Ernest Rutherford pe baza experimentului Geiger-Marsden din 1909 cu folie de aur.
+                După descoperirea neutronului în 1932, Dmitri Ivanenko și Werner Heisenberg au dezvoltat rapid modele pentru un nucleu compus din protoni și neutroni.
+                Un atom este compus dintr-un nucleu încărcat pozitiv, cu un nor de electroni încărcați negativ înconjurător, legați împreună prin forța electrostatică.
+                Aproape toată masa unui atom este localizată în nucleu, cu o contribuție foarte mică din norul de electroni.
+                Protonii și neutronii sunt legați împreună pentru a forma un nucleu prin forța nucleară.
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Compoziție și formă</b></h1>
+        </div>
+        <br /><br />
+        <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+            <section class="section3">
+                <b style="font-size:23px;">P</b>rotonii și neutronii sunt fermioni, cu valori diferite ale numărului cuantic puternic de izospin, astfel încât doi protoni și doi neutroni pot împărtăși aceeași funcție de undă spațială, deoarece nu sunt entități cuantice identice.
+                Ele sunt uneori privite ca două stări cuantice diferite ale aceleiași particule, nucleonul.
+                Doi fermioni, cum ar fi doi protoni sau doi neutroni, sau un proton + neutron (deutronul) pot prezenta un comportament bosonic atunci când se leagă în perechi, care au spin întreg.
+            </section>
+            <br /><br />
+            <section class="section3">
+                In cazul rar al unui hipernucleu, un al treilea barion numit hiperon, care conține unul sau mai mulți quarci ciudați și/sau alți quarci neobișnuiți, poate împărtăși și funcția de undă.
+                Cu toate acestea, acest tip de nucleu este extrem de instabil și nu se găsește pe Pământ decât în experimentele de fizică de înaltă energie.
+            </section>
+            <br /><br />
+            <section class="section3">
+                Neutronul are un miez încărcat pozitiv cu o rază ≈ 0,3 fm înconjurat de o sarcină negativă compensatoare cu o rază între 0,3 fm și 2 fm.
+                Protonul are o distribuție a sarcinii pozitive aproximativ exponențial, cu o rază pătrată medie de aproximativ 0,8 fm.
+            </section>
+        </section>
+    </section>
+    <br /><br /><br /><br /><br /><br />
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Forțele</b></h1>
+    </div>
+    <br /><br /><br /><br />
+    <div style=" color: white; align-items: center; justify-content: center" class="container">
+        <div class="section4">
+            <section style="padding-right:30px;padding-left:125px;" class="image">
+                <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Strong-Nuclear-Force-page.jpg" alt="Strong" height="275" width="400" />
+            </section>
+        </div>
+        <div class="section5">
+            <div style="padding-left:600px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Lucrări în domeniul opticii</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">N</b>ucleii sunt legați împreună de forța puternică reziduală (forța nucleară).
+                Forța puternică reziduală este un reziduu minor al interacțiunii puternice care leagă quarcii împreună pentru a forma protoni și neutroni.
+                Această forță este mult mai slabă între neutroni și protoni, deoarece este în mare parte neutralizată în interiorul lor, în același mod în care forțele electromagnetice dintre atomii neutri sunt mult mai slabe decât forțele electromagnetice care țin părțile atomilor împreună în interior.
+            </div>
+
+            <div class="section6">
+                <div style="padding-left:600px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Teoria gravitației</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">F</b>orța nucleară este foarte atractivă la distanța de separare tipică a nucleonilor, iar acest lucru copleșește repulsia dintre protoni datorită forței electromagnetice, permițând astfel nucleelor să existe.
+                    Cu toate acestea, forța puternică reziduală are o gamă limitată, deoarece se descompune rapid cu distanța, astfel încât numai nucleele mai mici decât o anumită dimensiune pot fi complet stabile.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Ernest Rutherford</b></h1>
+        </div>
+        <br /><br />
+              <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                  <section class="section3">
+                      <b style="font-size:23px;">E</b>rnest Rutherford, primul baron Rutherford din Nelson, a fost un fizician din Noua Zeelandă care a ajuns să fie cunoscut ca părintele fizicii nucleare.
+                      Encyclopædia Britannica îl consideră cel mai mare experimentator de la Michael Faraday. o parte substanțială a carierei sale în străinătate, atât în Canada, cât și în Regatul Unit.
+                  </section>
+                      <br /><br />
+                      <section class="section3">
+                          În primele lucrări, Rutherford a descoperit conceptul de timp de înjumătățire radioactiv, elementul radioactiv radon și radiații diferențiate și numite alfa și beta.
+                          Această lucrare a fost efectuată la Universitatea McGill din Montreal, Quebec, Canada.
+                          Acesta stă la baza Premiului Nobel pentru Chimie, căruia i-a fost acordat în 1908 „pentru investigațiile sale privind dezintegrarea elementelor și chimia substanțelor radioactive”, pentru care a fost primul laureat al Nobel oceanian și primul care a efectuat lucrare premiată în Canada.
+                          În 1904, a fost ales ca membru al Societății Americane de Filosofie.
+                      </section>
+                  </section>
+                  <br /><br />
+                        <div style=" color: white; align-items: center; justify-content: center" class="container">
+                            <div class="section4">
+                                <section style="padding-right:30px;padding-left:125px;" class="image">
+                                    <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Ruth.jpg" alt="Rutherford" height="450" width="300" />
+                                </section>
+                            </div>
+                            <div class="section5">
+                                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                                        <li><h3><b>Tinerete si Educatie</b></h3></li>
+                                    </ul>
+                                    <b style="font-size:23px;">E</b>rnest Rutherford s-a născut pe 30 august 1871, în Brightwater, Noua Zeelandă.
+                                    A primit studiile timpurii în Noua Zeelandă și mai târziu a urmat Universitatea din Noua Zeelandă, unde și-a obținut diplomele de licență și master în știință.
+                                </div>
+                            </div>
+                            <div class="section7">
+                                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                                        <li><h3><b>Experimentul Foliei de Aur</b></h3></li>
+                                    </ul>
+
+                                    <b style="font-size:23px;">C</b>el mai faimos experiment al lui Rutherford, efectuat în 1909, a implicat bombardarea unei folii subțiri de aur cu particule alfa.
+                                    Acest experiment a condus la descoperirea nucleului atomic și la formularea modelului nuclear al atomului.
+                                </div>
+                            </div>
+                            <div class="section6">
+                                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                                        <li><h3><b>Modelul Nuclear al Atomului</b></h3></li>
+                                    </ul>
+
+                                    <b style="font-size:23px;">P</b>e baza rezultatelor experimentului cu folie de aur, Rutherford a propus că atomii au un nucleu mic, dens și încărcat pozitiv în centrul lor.
+                                    Electronii se rotesc în jurul nucleului pe orbite specifice.
+                                </div>
+                            </div>
+                            <div class="section6">
+                                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                                        <li><h3><b>Contribuții in Fizica Nucleară</b></h3></li>
+                                    </ul>
+
+                                    <b style="font-size:23px;">C</b>ercetările lui Rutherford au pus bazele domeniului fizicii nucleare.
+                                    El a dezvoltat conceptul de timp de înjumătățire radioactiv și a adus contribuții importante la înțelegerea noastră a dezintegrarii nucleare, a naturii radiațiilor și a transmutației elementelor.
+                                </div>
+                            </div>
+                        </div>
+              </section>
+    <br /><br /><br /><br />
+</body>
+</html>

@@ -1,0 +1,622 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Blacker%20Hole.jpg'); height: 800px; width: 100%; " alt="Black"></div>
+            <div style="position: absolute; bottom: 250px; left: 400px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>GAURILE NEGRE</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Sunt Gaurile Negre</b></h1>
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+                <b style="font-size:23px;">O</b> gaură neagră este o regiune a spațiu-timpului în care gravitația este atât de puternică încât nimic, inclusiv lumina sau alte unde electromagnetice, nu are suficientă energie pentru a scăpa de orizontul său de evenimente.
+                Teoria relativității generale prezice că o masă suficient de compactă poate deforma spațiu-timp pentru a forma o gaură neagră. Limita fără evadare se numește orizont de evenimente.
+                Deși are un efect mare asupra soartei și circumstanțelor unui obiect care îl traversează, nu are caracteristici detectabile local conform relativității generale.
+                În multe feluri, o gaură neagră acționează ca un corp negru ideal, deoarece nu reflectă lumina.
+                În plus, teoria câmpului cuantic în spațiu-timp curbat prezice că orizonturile evenimentelor emit radiații Hawking, cu același spectru ca un corp negru cu o temperatură invers proporțională cu masa lui.
+                Această temperatură este de ordinul miliardelor de kelvin pentru găurile negre stelare, ceea ce face practic imposibil de observat direct.
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Structura</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">G</b>ăurile negre sunt compuse în primul rând din masă, dar compoziția lor depășește materia obișnuită așa cum o înțelegem.
+                Iată o defalcare a componentelor care alcătuiesc o gaură neagră:
+            </section>
+        </section>
+        <br /><br />
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <div class="section4">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Orizontul venimentelor</b></h3></li>
+                    </ul>
+                    <b style="font-size:23px;">C</b>aracteristica definitorie a unei găuri negre este apariția unui orizont de evenimente - o limită în spațiu-timp prin care materia și lumina pot trece numai spre interior, spre masa găurii negre.
+                    Nimic, nici măcar lumina, nu poate scăpa din interiorul orizontului evenimentelor. Orizontul evenimentului este menționat ca atare deoarece, dacă un eveniment are loc în interiorul graniței, informațiile din acel eveniment nu pot ajunge la un observator din exterior, ceea ce face imposibilă determinarea dacă un astfel de eveniment a avut loc.
+                    <br /><br />
+                    După cum este prezis de relativitatea generală, prezența unei mase deformează spațiu-timp în așa fel încât căile parcurse de particule se îndoaie spre masă.
+                    La orizontul de evenimente al unei găuri negre, această deformare devine atât de puternică încât nu există căi care să se îndepărteze de gaura neagră.
+
+                </div>
+            </div>
+
+            <div class="section5">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Singularitatea</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">I</b>n centrul unei găuri negre, așa cum este descris de relativitatea generală, se poate afla o singularitate gravitațională, o regiune în care curbura spațiu-timp devine infinită.
+                    Pentru o gaură neagră care nu se rotește, această regiune ia forma unui singur punct; pentru o gaură neagră care se rotește, aceasta este întinsă pentru a forma o singularitate de inel care se află în planul de rotație.
+                    În ambele cazuri, regiunea singulară are volum zero. Se poate demonstra, de asemenea, că regiunea singulară conține toată masa soluției găurii negre.
+                    Regiunea singulară poate fi astfel considerată ca având o densitate infinită.
+                    <br /><br />
+                    Observatorii care cad într-o gaură neagră Schwarzschild nu pot evita să fie transportați în singularitate odată ce trec orizontul evenimentelor.
+                    Ei pot prelungi experiența accelerând pentru a-și încetini coborârea, dar numai până la o limită. Când ajung la singularitate, sunt zdrobiți la o densitate infinită și masa lor se adaugă la totalul găurii negre.
+                    Înainte să se întâmple asta, ei vor fi fost sfâșiați de forțele crescânde ale mareelor într-un proces denumit uneori spaghetificare sau „efectul de tăiței”.
+                </div>
+            </div>
+            <div class="section2">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Sfera foton</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">S</b>fera fotonică este o limită sferică de grosime zero în care fotonii care se mișcă pe tangente la acea sferă ar fi prinși într-o orbită circulară în jurul găurii negre.
+                    Pentru găurile negre care nu se rotesc, sfera fotonului are o rază de 1,5 ori mai mare decât raza Schwarzschild.
+                    Orbitele lor ar fi instabile din punct de vedere dinamic, prin urmare orice mică perturbare, cum ar fi o particulă de materie care intră, ar provoca o instabilitate care ar crește în timp, fie punând fotonul pe o traiectorie spre exterior, făcându-l să scape din gaura neagră, sau pe o spirală interioară unde ar traversa în cele din urmă orizontul evenimentelor.s
+                    <br /><br />
+                    În timp ce lumina poate încă scăpa din sfera fotonică, orice lumină care traversează sfera fotonică pe o traiectorie de intrare va fi capturată de gaura neagră.
+                    Prin urmare, orice lumină care ajunge la un observator din exterior din sfera fotonică trebuie să fi fost emisă de obiecte între sfera fotonică și orizontul evenimentelor.
+                </div>
+            </div>
+            <div class="section3">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Ergosfera</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">G</b>ăurile negre care se rotesc sunt înconjurate de o regiune a spațiu-timp în care este imposibil să stai nemișcat, numită ergosferă.
+                    Acesta este rezultatul unui proces cunoscut sub numele de frame-dragging; relativitatea generală prezice că orice masă în rotație va tinde să se „tragă” ușor de-a lungul spațiu-timpului care o înconjoară imediat.
+                    Orice obiect din apropierea masei care se rotește va tinde să se miște în direcția de rotație. Pentru o gaură neagră care se rotește, acest efect este atât de puternic în apropierea orizontului de evenimente încât un obiect ar trebui să se miște mai repede decât viteza luminii în direcția opusă pentru a rămâne nemișcat.
+                    <br /><br />
+                    Ergosfera unei găuri negre este un volum delimitat de orizontul de evenimente al găurii negre și suprafața ergo, care coincide cu orizontul de evenimente de la poli, dar se află la o distanță mult mai mare în jurul ecuatorului.
+                </div>
+                <div class="section4">
+                    <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                        <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                            <li><h2><b>CÎOCS</b></h2> <h5>(Cea mai înaltă orbită circulară stabilă)</h5></li>
+                        </ul>
+                        În gravitația newtoniană, particulele de testare pot orbita stabil la distanțe arbitrare față de un obiect central. În relativitatea generală, totuși, există o orbită circulară stabilă cea mai interioară (numită adesea ISCO,Innermost stable circular orbit), pentru care orice perturbație infinitezimală către o orbită circulară va duce la spiralarea în gaura neagră, iar orice perturbație exterioară va, în funcție de energie, duce la spiralarea, orbital stabil între apastron și periastron sau evadarea la infinit. Locația ISCO depinde de rotirea găurii negre
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Formare și evoluție</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">G</b>ăurile negre sunt compuse în primul rând din masă, dar compoziția lor depășește materia obișnuită așa cum o înțelegem.
+                Iată o defalcare a componentelor care alcătuiesc o gaură neagră:
+            </section>
+        </section>
+        <br /><br />
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <div class="section4">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h4>Formare</h4></li>
+                    </ul>
+                    Având în vedere caracterul bizar al găurilor negre, s-a pus la îndoială mult timp dacă astfel de obiecte ar putea exista de fapt în natură sau dacă erau doar soluții patologice ale ecuațiilor lui Einstein.
+                    Einstein însuși a crezut în mod greșit că găurile negre nu se vor forma, deoarece a susținut că momentul unghiular al particulelor care se prăbușește le va stabiliza mișcarea la o anumită rază.
+                    Acest lucru a determinat comunitatea relativității generale să respingă toate rezultatele în sens invers timp de mulți ani.
+                    Cu toate acestea, o minoritate de relativiști a continuat să susțină că găurile negre sunt obiecte fizice, iar până la sfârșitul anilor 1960, ei au convins majoritatea cercetătorilor din domeniu că nu există niciun obstacol în calea formării unui orizont de evenimente.
+                </div>
+            </div>
+
+            <div class="section5">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h4>Creştere</h4></li>
+                    </ul>
+                    Odată ce s-a format o gaură neagră, aceasta poate continua să crească prin absorbția de materie suplimentară. Orice gaură neagră va absorbi continuu gazul și praful interstelar din împrejurimile sale. Acest proces de creștere este o modalitate posibilă prin care s-ar fi putut forma unele găuri negre supermasive, deși formarea găurilor negre supermasive este încă un câmp deschis de cercetare.
+                    Un proces similar a fost sugerat pentru formarea găurilor negre de masă intermediară găsite în clustere globulare.
+                    Găurile negre se pot îmbina și cu alte obiecte, cum ar fi stelele sau chiar alte găuri negre. Se crede că acest lucru a fost important, în special în creșterea timpurie a găurilor negre supermasive, care s-ar fi putut forma din agregarea multor obiecte mai mici.
+                    Procesul a fost, de asemenea, propus ca origine a unor găuri negre de masă intermediară.
+                </div>
+            </div>
+            <div class="section2">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h4>Evaporare</h4></li>
+                    </ul>
+                    În 1974, Hawking a prezis că găurile negre nu sunt în întregime negre, ci emit cantități mici de radiație termică la o temperatură ℏc3/(8πGMkB); acest efect a devenit cunoscut sub numele de radiație Hawking. Aplicând teoria câmpului cuantic la un fundal de găuri negre statice, el a determinat că o gaură neagră ar trebui să emită particule care prezintă un spectru perfect al corpului negru.
+                    De la publicarea lui Hawking, mulți alții au verificat rezultatul prin diverse abordări.
+                    Dacă teoria lui Hawking despre radiația găurii negre este corectă, atunci este de așteptat ca găurile negre să se micșoreze și să se evapore în timp, pe măsură ce își pierd masa prin emisia de fotoni și alte particule.
+                    Temperatura acestui spectru termic (temperatura Hawking) este proporțională cu gravitația de suprafață a găurii negre, care, pentru o gaură neagră Schwarzschild, este invers proporțională cu masa.
+                    Prin urmare, găurile negre mari emit mai puține radiații decât găurile negre mici.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Steven Hawking</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">S</b>tephen William Hawking a fost un fizician teoretic, cosmolog și autor englez care, la momentul morții sale, era director de cercetare la Centrul pentru Cosmologie Teoretică de la Universitatea din Cambridge.
+                Între 1979 și 2009, a fost profesor lucasian de matematică la Universitatea din Cambridge, considerată pe scară largă drept una dintre cele mai prestigioase posturi academice din lume.
+            </section>
+        </section>
+        <br /><br />
+              <div style=" color: white; align-items: center; justify-content: center" class="container">
+                  <div class="section4">
+                      <section style="padding-right:30px;padding-left:125px;" class="image">
+                          <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Hawking.jpg" alt="Hawking" height="450" width="300" />
+                      </section>
+                  </div>
+                  <div class="section5">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Hawking Radiation</b></h3></li>
+                          </ul>
+                          <b style="font-size:23px;">U</b>na dintre cele mai semnificative contribuții ale lui Hawking este predicția teoretică a radiației Hawking.
+                          În 1974, el a propus că găurile negre nu sunt în întregime negre, ci emit o formă de radiație datorită efectelor cuantice din apropierea orizontului de evenimente.
+                          Această idee revoluționară a provocat înțelegerea predominantă a găurilor negre și a comportamentului lor.
+                      </div>
+                  </div>
+
+                  <div class="section6">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Termodinamica găurii negre</b></h3></li>
+                          </ul>
+
+                          <b style="font-size:23px;">L</b>ucrările lui Hawking asupra radiației găurilor negre au condus la dezvoltarea termodinamicii găurilor negre.
+                          El a arătat că găurile negre au proprietăți analoge cu sistemele termodinamice, cum ar fi temperatura, entropia și legile mecanicii găurilor negre.
+                      </div>
+                  </div>
+                  <div class="section7">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Teoreme de singularitate</b></h3></li>
+                          </ul>
+
+                          <b style="font-size:23px;">I</b>n colaborare cu matematicianul Roger Penrose, Hawking a dezvoltat teoreme de singularitate care au demonstrat inevitabilitatea singularităților, inclusiv a celor din găurile negre, în anumite condiții.
+                          Aceste teoreme au contribuit la înțelegerea noastră a naturii spațiului și timpului în apropierea singularităților.
+                      </div>
+                  </div>
+
+                  <div class="section6">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Teorii cosmologice</b></h3></li>
+                          </ul>
+
+                          <b style="font-size:23px;">H</b>awking a adus contribuții semnificative la înțelegerea noastră a universului timpuriu și a Big Bang-ului.
+                          El a explorat teoriile inflației cosmice, săgeata timpului și conceptul de multivers.
+                      </div>
+                  </div>
+              </div>
+    </section>
+    <br /><br /><br /><br />
+</body>
+</html>

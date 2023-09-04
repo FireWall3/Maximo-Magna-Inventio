@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Relativ.png'); height: 800px; width: 100%; " alt="Relativity"></div>
+            <div style="position: absolute; bottom: 250px; left: 450px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>RELATIVITATEA</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Este Relativitatea</b></h1>
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+                <b style="font-size:23px;">T</b>eoria relativității reprezintă în fizica modernă un ansamblu a două teorii formulate de Albert Einstein: relativitatea restrânsă și relativitatea generală.
+                Ideea de bază a acestor două teorii este că timpul și distanțele unui eveniment măsurate de doi observatori au, în general, valori diferite, dar se supun totdeauna acelorași legi fizice.
+                Când doi observatori examinează configurații diferite, și anume deplasările lor, una în raport cu cealaltă, aplicând regulile logice, se constată că legile fizice au în mod necesar o anumită formă.
+                Exista 2 tipuri de relativitate:
+                <br />
+                <h3><i>Relativitate Restransa</i> si <i>Relativitate Generala</i></h3>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Relativitatea restrânsă</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br />
+
+
+        <div class="section3">
+            <section style="padding-left:125px;padding-right:125px;" class="text">
+                <b style="font-size:23px;">R</b>elativitatea restrânsă se preocupă de legile fizicii în cadre de referință care se mișcă cu o viteză constantă unul față de celălalt.
+                Unul dintre cele mai cunoscute rezultate ale relativității speciale este ecuația E=mc^2, care arată că masa și energia sunt echivalente și interschimbabile.
+                Relativitatea restrânsă prezice și dilatarea timpului, ceea ce înseamnă că timpul pare să curgă mai lent pentru un observator care se mișcă cu o viteză mare în comparație cu un alt observator în repaus.
+                Relativitatea specială este o teorie dezvoltată de Albert Einstein în 1905, care descrie comportamentul obiectelor în mișcare unul față de celălalt. Se numește „specială” deoarece se ocupă de situații care sunt „speciale” în sensul că implică doar mișcare uniformă (viteză constantă).
+                Unul dintre postulatele cheie ale relativității speciale este că legile fizicii sunt aceleași în toate cadrele de referință inerțiale.
+                Aceasta înseamnă că, dacă vă aflați într-o navă spațială care se mișcă cu o viteză constantă față de Pământ, legile fizicii vă vor arăta exact la fel ca și pentru cineva de pe Pământ care este staționar.
+                Acest lucru poate părea evident, dar are de fapt niște consecințe profunde.
+            </section>
+        </div>
+
+
+        <br /><br /><br /><br /><br /><br />
+
+
+        <div class="section4">
+            <div style="padding-left: 125px; padding-right: 125px; color: white; font-size: 17px" class="text">
+                <h3><b>Consecințe</b></h3>
+            </div>
+        </div>
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Dilatarea timpului:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">T</b>impul pare să curgă mai lent pentru obiectele în mișcare față de un observator staționar.
+                Acest efect devine mai pronunțat pe măsură ce viteza relativă dintre cele două obiecte crește.
+                Aceasta înseamnă că timpul poate părea să treacă mai încet pentru un ceas în mișcare decât pentru unul staționar.
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Contracția lungimii:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">O</b>biectele par a fi mai scurte în direcția mișcării atunci când sunt privite dintr-un cadru de referință care se mișcă în raport cu obiectul.
+                Acest efect devine mai pronunțat pe măsură ce crește viteza relativă dintre cele două cadre de referință.
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Relativitatea simultaneității:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">C</b>onceptul de „acum” nu este absolut, ci este relativ la cadrul de referință al observatorului.
+                Aceasta înseamnă că două evenimente care par să apară simultan într-un cadru de referință pot să nu pară simultane într-un alt cadru de referință care se mișcă în raport cu primul.
+            </div>
+        </div>
+
+        <br />
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Echivalența masă-energie:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">E</b>cuația E=mc^2 arată că masa și energia sunt echivalente și pot fi convertite una în alta.
+                Aceasta înseamnă că masa poate fi convertită în energie (ca în reacțiile nucleare) și energia poate fi transformată în masă (ca în anihilarea particule-antiparticule)
+            </div>
+        </div>
+
+        <br />
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Niciun semnal nu poate călători mai repede decât viteza luminii:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">R</b>elativitatea specială prezice că viteza luminii este constantă în toate cadrele de referință.
+                Aceasta înseamnă că niciun obiect sau semnal nu poate călători mai repede decât viteza luminii, indiferent de viteza relativă dintre obiect și observator
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Relativitatea generală</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br />
+
+
+        <div class="section3">
+            <section style="padding-left:125px;padding-right:125px;" class="text">
+                <b style="font-size:23px;">R</b>elativitatea generală este o teorie dezvoltată de Albert Einstein în 1915 care descrie comportamentul obiectelor în prezența gravitației.
+                Conform relativității generale, gravitația nu este o forță, ci mai degrabă o curbură a spațiu-timpului cauzată de prezența masei și a energiei.
+                <br />
+                Ne putem gândi că spațiu-timp este un cadru cu patru dimensiuni care combină spațiul și timpul într-o singură entitate.
+                În acest cadru, evenimentele sunt descrise prin patru coordonate: trei coordonate ale spațiului (x, y, z) și o coordonată a timpului (t). Cu alte cuvinte, un anumit eveniment este situat într-un anumit punct atât în spațiu, cât și în timp.
+                <br />
+                Conform relativității generale, prezența masei și energiei într-o regiune a spațiu-timp provoacă curbura spațiu-timpului în acea regiune.
+                Această curbură este ceea ce percepem ca gravitație. Obiectele care se mișcă în acest spațiu-timp curbat urmează căi care sunt influențate de curbură, determinându-le să se miște ca și cum ar experimenta o forță
+            </section>
+        </div>
+
+
+        <br /><br /><br /><br /><br /><br />
+
+
+        <div class="section4">
+            <div style="padding-left: 125px; padding-right: 125px; color: white; font-size: 17px" class="text">
+                <h3><b>Consecințe</b></h3>
+            </div>
+        </div>
+        <br />
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Dilatarea timpului gravitațional:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">D</b>upă cum am menționat mai devreme, relativitatea generală prezice că timpul curge mai lent în regiunile cu câmpuri gravitaționale puternice.
+                Acest efect a fost observat și măsurat, inclusiv prin experimente care implică ceasuri atomice la diferite altitudini.
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Lentila gravitațională:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">R</b>elativitatea generală prezice că obiectele masive pot îndoi calea luminii care trece pe lângă ele, făcând ca lumina de la obiecte îndepărtate să pară distorsionată sau mărită.
+                Acest efect a fost observat și confirmat prin diferite observații astronomice.
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Găuri negre:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">R</b> Relativitatea generală prezice existența găurilor negre, care sunt regiuni ale spațiu-timpului în care câmpul gravitațional este atât de puternic încât nimic, nici măcar lumina, nu poate scăpa.
+                Existența găurilor negre a fost confirmată prin diverse observații, inclusiv prin detectarea undelor gravitaționale.
+            </div>
+        </div>
+
+        <br />
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Unde gravitaționale:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">R</b>elativitatea generală prezice existența undelor gravitaționale, care sunt ondulații în țesătura spațiu-timpului cauzate de accelerația obiectelor masive.
+                Detectarea undelor gravitaționale în 2015 de către observatoarele LIGO a oferit o confirmare puternică a teoriei relativității generale.
+            </div>
+        </div>
+
+        <br />
+
+        <div class="section5">
+            <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                    <li><h3><b>Expansiunea universului:</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">R</b>elativitatea generală oferă baza teoretică pentru modelul Big Bang al originii și evoluției universului.
+                Acesta prezice că universul ar trebui să se extindă, ceea ce a fost observat și confirmat prin diferite observații astronomice, inclusiv prin descoperirea radiației cosmice de fond cu microunde.
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Albert Einstein</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">A</b>lbert Einstein a fost un matematician și fizician german care a dezvoltat teoriile speciale și generale ale relativității.
+                În 1921, a câștigat Premiul Nobel pentru Fizică pentru explicația sa asupra efectului fotoelectric.
+                În următorul deceniu, el a emigrat în Statele Unite după ce a fost vizat de Partidul Nazist German.
+                Munca lui a avut, de asemenea, un impact major asupra dezvoltării energiei atomice.
+                În ultimii săi ani, Einstein s-a concentrat pe teoria câmpului unificat.
+                Datorită pasiunii sale pentru cercetare, Einstein este considerat în general cel mai influent fizician al secolului XX.
+            </section>
+        </section>
+        <br /><br />
+              <div style=" color: white; align-items: center; justify-content: center" class="container">
+                  <div class="section4">
+                      <section style="padding-right:30px;padding-left:125px;" class="image">
+                          <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Albert-Einstein.png" alt="Albert" height="450" width="300" />
+                      </section>
+                  </div>
+                  <br />
+                  <div class="section5">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Viața timpurie și educația</b></h3></li>
+                          </ul>
+                          <b style="font-size:23px;">A</b>lbert Einstein s-a născut în Ulm, Germania, în 1879.
+                          A crescut într-o familie de evrei din clasa de mijloc și a arătat un interes timpuriu pentru știință și matematică.
+                          A urmat cursurile Politehnicii Federale Elvețiane din Zurich, unde a studiat fizica și matematica.
+                      </div>
+                  </div>
+
+                  <div class="section6">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Lucrări revoluționare</b></h3></li>
+                          </ul>
+
+                          <b style="font-size:23px;">I</b>n 1905, Einstein a publicat o serie de lucrări care au revoluționat domeniile fizicii și matematicii.
+                          Printre acestea se numără lucrarea sa despre relativitatea specială, care propunea că legile fizicii sunt aceleași pentru toți observatorii în mișcare uniformă unul față de celălalt, și lucrarea sa despre efectul fotoelectric, care explica comportamentul electronilor în radiația electromagnetică.
+                      </div>
+                  </div>
+                  <div class="section7">
+                      <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                          <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                              <li><h3><b>Premiul Nobel</b></h3></li>
+                          </ul>
+
+                          <b style="font-size:23px;">I</b>n 1921, Einstein a primit Premiul Nobel pentru fizică pentru munca sa asupra fizicii teoretice, în special pentru explicația sa asupra efectului fotoelectric.
+                          Cu toate acestea, nu a primit premiul pentru munca sa despre relativitate, care era considerată încă controversată la acea vreme.
+                      </div>
+                  </div>
+              </div>
+    </section>
+    <br /><br /><br /><br /><br /><br />
+</body>
+</html>

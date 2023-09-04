@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Electron-transformed.png'); height: 800px; width: 100%; " alt="AppleTree"></div>
+            <div style="position: absolute; bottom: 250px; left: 450px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>ELECTRONUL</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Este Electronul</b></h1>
+        </div>
+
+        <br /><br />
+        <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">U</b>n electron este o particulă subatomică încărcată negativ care poate fi fie legată de un atom, fie liberă.
+                Un electron care este legat de un atom este unul dintre cele trei tipuri principale de particule din atom, celelalte două sunt protoni și neutroni.
+            </div>
+            <br /><br />
+            <div class="section3">
+                Împreună, electronii, protonii și neutronii formează nucleul unui atom. Un proton are o sarcină pozitivă care contracarează sarcina negativă a electronului.
+                Când un atom are același număr de protoni și electroni, se află într-o stare neutră.
+            </div>
+            <br /><br />
+            <div class="section3">
+                Electronii sunt unici față de celelalte particule în mai multe moduri.
+                Ele există în afara nucleului, sunt semnificativ mai mici ca masă și prezintă atât caracteristici de undă, cât și de particule. Un electron este, de asemenea, o particulă elementară, ceea ce înseamnă că nu este alcătuit din componente mai mici.
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Istorie</b></h1>
+        </div>
+        <br /><br /><br /><br />
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <div class="section5">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Descoperirea efectului forței electrice</b></h3></li>
+                    </ul>
+                    <b style="font-size:23px;">G</b>recii antici au observat că chihlimbarul atrăgea obiecte mici atunci când era frecat cu blană.
+                    Alături de fulger, acest fenomen este una dintre cele mai vechi experiențe înregistrate ale omenirii cu electricitatea.
+                    În tratatul său De Magnete din 1600, omul de știință englez William Gilbert a inventat termenul neolatin electrica, pentru a se referi la acele substanțe cu proprietăți similare cu cea a chihlimbarului care atrag obiecte mai mici după ce au fost frecate.
+                </div>
+            </div>
+
+            <br />
+
+            <div class="section6">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Descoperirea a două tipuri de sarcini electricei</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">L</b>a începutul anilor 1700, chimistul francez Charles François du Fay a descoperit că, dacă o foită de aur încărcată este respinsă de sticlă frecata cu mătase, atunci aceeași foiță de aur încărcată este atrasă de chihlimbar frecat cu lână.
+                    Din aceasta și alte rezultate ale unor tipuri similare de experimente, du Fay a concluzionat că electricitatea constă din două fluide electrice, fluid vitros din sticlă frecat cu mătase și fluid rășinos din chihlimbar frecat cu lână.
+                    Aceste două fluide se pot neutraliza reciproc atunci când sunt combinate. Omul de știință american Ebenezer Kinnersley a ajuns mai târziu în mod independent la aceeași concluzie.118  Un deceniu mai târziu, Benjamin Franklin a propus că electricitatea nu provine din diferite tipuri de fluid electric, ci dintr-un singur fluid electric care prezintă un exces (+ ) sau deficit (−). El le-a dat nomenclatura modernă a sarcinii pozitive și, respectiv, negative.
+                    Franklin a considerat purtătorul de sarcină ca fiind pozitiv, dar nu a identificat corect care situație era un surplus al purtătorului de sarcină și care situație era un deficit.
+                </div>
+            </div>
+
+            <br />
+
+
+            <div class="section7">
+                <div style="padding-left:125px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Descoperirea electronilor liberi în afara materiei</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">Î</b>n timp ce studia conductivitatea electrică în gazele rarefiate în 1859, fizicianul german Julius Plücker a observat că radiația emisă de catod a făcut ca lumina fosforescentă să apară pe peretele tubului din apropierea catodului; iar regiunea luminii fosforescente ar putea fi mutată prin aplicarea unui câmp magnetic.
+                    În 1869, studentul lui Plücker, Johann Wilhelm Hittorf, a descoperit că un corp solid plasat între catod și fosforescență ar arunca o umbră asupra regiunii fosforescente a tubului.
+                    Hittorf a dedus că există raze drepte emise de catod și că fosforescența a fost cauzată de razele care lovesc pereții tubului. În 1876, fizicianul german Eugen Goldstein a arătat că razele erau emise perpendicular pe suprafața catodului, ceea ce facea distincția între razele care erau emise de catod și lumina incandescentă.
+                    Goldstein a numit razele raze catodice. Decenii de cercetări experimentale și teoretice care implică raze catodice au fost importante în eventuala descoperire a electronilor de către J. J. Thomson.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Clasificare</b></h1>
+        </div>
+
+        <br /><br />
+        <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">Î</b>n modelul standard al fizicii particulelor, electronii aparțin grupului de particule subatomice numite leptoni, despre care se crede că sunt particule fundamentale sau elementare.
+                Electronii au masa cea mai mică dintre orice lepton încărcat (sau particulă încărcată electric de orice tip) și aparțin primei generații de particule fundamentale.
+                A doua și a treia generație conțin leptoni încărcați, muonul și tau, care sunt identici cu electronul în sarcină, spin și interacțiuni, dar sunt mai masivi.
+                Leptonii se deosebesc de celălalt constituent de bază al materiei, quarcii, prin lipsa lor de interacțiune puternică.
+                Toți membrii grupului de leptoni sunt fermioni, deoarece toți au spin întreg jumătate impar; electronul are spin 1/2
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Sir Joseph John Thomson</b></h1>
+        </div>
+        <br /><br /><br /><br />
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <div class="section4">
+                <section style="padding-right:30px;padding-left:125px;" class="image">
+                    <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Thomas.jpg" alt="Thomson" height="450" width="300" />
+                </section>
+            </div>
+            <div class="section5">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Descoperirea electronului:</b></h3></li>
+                    </ul>
+                    <b style="font-size:23px;">U</b>na dintre cele mai notabile realizări ale lui Thomson a fost descoperirea electronului în 1897.
+                    Prin experimentele sale cu raze catodice, el a demonstrat că razele catodice erau formate din particule încărcate negativ, pe care le-a numit electroni.
+                    Această descoperire a revoluționat înțelegerea noastră a structurii atomice și a pus bazele cercetărilor viitoare în fizica particulelor.
+                </div>
+            </div>
+            <div class="section7">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Modelul Plum Pudding</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">P</b>e baza descoperirilor sale cu privire la electron, Thomson a propus Modelul Plum Pudding al atomului în 1904.
+                    Conform acestui model, atomii erau alcătuiți dintr-o „budincă” încărcată pozitiv, cu electroni încorporați acționând ca niște prune în interiorul acestuia.
+                    În timp ce modelul de budincă de prune s-a dovedit ulterior incorect, acesta a reprezentat un pas important în înțelegerea noastră a structurii atomice.
+                </div>
+            </div>
+            <div class="section6">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Contribuții la electromagnetism</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">T</b>homson a făcut mai multe contribuții în domeniul electromagnetismului.
+                    El a efectuat cercetări privind comportamentul particulelor încărcate în câmpurile electrice și magnetice și a studiat fenomenele de inducție electromagnetică și deflexia particulelor încărcate.
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br /><br /><br />
+</body>
+</html>

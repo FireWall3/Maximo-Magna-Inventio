@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Electro.jpg'); height: 800px; width: 100%; " alt="Electromagnetism"></div>
+        <div style="position: absolute; bottom: 250px; left: 200px; font-size: 47px;" class="text_1">
+            <h1 class="header"><b>ELECTROMAGNETISMUL</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Este Electromagnetismul</b></h1>
+        </div>
+
+
+        <br /><br />
+
+        <div class="section3">
+            <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+                <b style="font-size:23px;">E</b>lectromagnetismul este o ramură a fizicii care studiază interacțiunile dintre particulele încărcate electric și câmpurile electromagnetice.
+                <br />
+                Este una dintre forțele fundamentale ale naturii și joacă un rol crucial în înțelegerea comportamentului particulelor încărcate, a undelor electromagnetice și a funcționării multor dispozitive tehnologice.
+            </div>
+        </div>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Concepte Fundamentale</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br />
+
+
+
+    <div style=" color: white; align-items: center; justify-content: center" class="container">
+        <section style="padding-left:125px;padding-right:125px;" class="text">
+            <div class="section3">
+                <ul>
+                    <li><h3><b>Sarcina Electrică</b></h3></li>
+                </ul>
+
+                <b style="font-size:23px;">S</b>arcina electrică este o proprietate fundamentală a materiei care determină modul în care interacționează cu câmpurile electrice.
+                Există două tipuri de sarcină electrică: pozitivă și negativă.
+                Sarcinile asemănătoare se resping unele pe altele, în timp ce sarcinile opuse se atrag.
+            </div>
+
+            <div class="section4">
+                <ul>
+                    <li><h3><b>Câmpul Electric</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">U</b>n câmp electric este o regiune a spațiului în jurul unei sarcini electrice sau a unui grup de sarcini în care forța electrică este exercitată asupra altor particule încărcate.
+                Câmpurile electrice pot fi vizualizate ca linii de forță invizibile care emană din sarcini pozitive și se termină cu sarcini negative.
+            </div>
+
+            <div class="section5">
+                <ul>
+                    <li><h3><b>Curentul Electric</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">C</b>urentul electric se referă la fluxul de sarcină electrică printr-un conductor, cum ar fi un fir.
+                Este cauzată de obicei de mișcarea electronilor.
+                Curenții electrici generează câmpuri magnetice și pot produce o gamă largă de efecte, inclusiv generarea de căldură și funcționarea dispozitivelor electrice.
+            </div>
+
+            <div class="section6">
+                <ul>
+                    <li><h3><b>Câmpul Magnetic</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">U</b>n câmp magnetic este o regiune a spațiului din jurul unui magnet sau a unui conductor care transportă curent în care forțele magnetice sunt exercitate asupra altor magneți sau sarcini în mișcare.
+                Câmpurile magnetice pot fi vizualizate folosind linii de câmp magnetic, care formează bucle închise în jurul surselor magnetice.
+            </div>
+
+            <div class="section7">
+                <ul>
+                    <li><h3><b>Undele Electromagnetice</b></h3></li>
+                </ul>
+                <b style="font-size:23px;">U</b>ndele electromagnetice sunt o formă de propagare a energiei care rezultă din interacțiunea câmpurilor electrice și magnetice în schimbare.
+                Acestea includ diferite tipuri de unde, cum ar fi unde radio, microunde, infraroșu, lumină vizibilă, ultravioletă, raze X și raze gamma.
+                Undele electromagnetice pot călători printr-un vid și au proprietăți diferite în funcție de lungimea de undă și frecvența lor.
+            </div>
+        </section>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Fortele Fundamentale</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br />
+
+
+    <div class="section3">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-top:70px;padding-left:125px;padding-right:125px;" class="text">
+                <b style="font-size:23px;">E</b>xistă patru forțe fundamentale, cunoscute și ca interacțiuni fundamentale, care guvernează comportamentul și interacțiunile particulelor din univers. Aceste forte sunt:
+                <ol>
+                    <li><b>Gravitația</b></li>
+                    <li><b>Forță Electromagnetică</b></li>
+                    <li><b>Forță Nucleară Slabă</b></li>
+                    <li><b>Forță Nucleară Puternică</b></li>
+                </ol>
+            </section>
+        </div>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Gravitația</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-right:125px;padding-left:30px;" class="image">
+                <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Gravity.jpg" alt="Gravity" height="250" width="400" />
+            </section>
+        </div>
+    </div>
+    <section style="padding-left:125px;padding-right:550px;color:white;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">G</b>ravitația este o forță universală care atrage obiecte cu masă unele către altele. Este responsabil pentru mișcarea planetelor, stelelor și galaxiilor.
+            Conform teoriei relativității generale a lui Albert Einstein, gravitația este curbura spațiu-timpului cauzată de prezența masei sau a energiei.
+            Acționează pe distanțe mari și este direct proporțional cu masele obiectelor implicate.
+            În timp ce gravitația este cea mai slabă dintre cele patru forțe fundamentale, ea devine semnificativă la scară mare și guvernează dinamica corpurilor cerești.
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            Gravitația este de departe cea mai slabă dintre cele patru interacțiuni la scara atomică, unde interacțiunile electromagnetice domină. Dar ideea că slăbiciunea gravitației poate fi demonstrată cu ușurință prin suspendarea unui știft folosind un magnet simplu (cum ar fi un magnet de frigider) este fundamental defectuoasă.
+            Există în mod clar o distanță scurtă de separare între magnet și știft unde se ajunge la un punct de rupere, iar din cauza masei mari a Pământului această distanță este destul de mică.
+            Gravitația este cea mai importantă dintre cele patru forțe fundamentale pentru obiectele astronomice pe distanțe astronomice din două motive.
+            În primul rând, gravitația are o gamă eficientă infinită, precum electromagnetismul, dar spre deosebire de interacțiunile puternice și slabe.
+            În al doilea rând, gravitația atrage întotdeauna și nu respinge niciodată; în contrast, corpurile astronomice tind către o sarcină electrică netă aproape neutră, astfel încât atracția pentru un tip de sarcină și repulsia încărcăturii opuse se anulează în mare parte reciprocă.
+        </div>
+    </section>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Forță Electromagnetică</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br />
+
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-right:30px;padding-left:125px;" class="image">
+                <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Eelctromagnetism.jpg" alt="Electromagnetica" height="250" width="400" />
+            </section>
+        </div>
+    </div>
+    <section style="padding-left:550px;padding-right:125px;color:white;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">F</b>orța electromagnetică este o forță fundamentală care cuprinde interacțiunile electrice și magnetice.
+            Forțele electrice sunt responsabile pentru atracția sau repulsia dintre particulele încărcate.
+            Ei urmează legea lui Coulomb, care spune că sarcinile asemănătoare se resping reciproc, în timp ce sarcinile opuse se atrag.
+            Forțele magnetice acționează asupra sarcinilor în mișcare și a obiectelor magnetice. Relația dintre câmpurile electrice și magnetice este descrisă de ecuațiile lui Maxwell.
+            Forța electromagnetică joacă un rol central în viața de zi cu zi, guvernând fenomene precum interacțiunile chimice, curenții electrici și comportamentul luminii.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Electromagnetismul și interacțiunea slabă par a fi foarte diferite la energiile scăzute de zi cu zi.
+            Ele pot fi modelate folosind două teorii diferite. Cu toate acestea, deasupra energiei de unificare, de ordinul a 100 GeV, ele s-ar contopi într-o singură forță electroslabă.
+            Teoria electroslabei este foarte importantă pentru cosmologia modernă, în special în ceea ce privește modul în care a evoluat universul.
+            Acest lucru se datorează faptului că la scurt timp după Big Bang, când temperatura era încă peste aproximativ 1015 K, forța electromagnetică și forța slabă erau încă fuzionate ca o forță electroslăbită combinată.
+        </div>
+    </section>
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Forță Nucleară Slabă</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-right:125px;padding-left:30px;" class="image">
+                <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Weak.jpg" alt="Weak" height="250" width="400" />
+            </section>
+        </div>
+    </div>
+    <section style="padding-left:125px;padding-right:550px;color:white;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">F</b>orța nucleară slabă este responsabilă pentru anumite tipuri de dezintegrari radioactive și interacțiuni care implică particule elementare.
+            Este implicat în procese precum dezintegrarea beta, în care un neutron se transformă într-un proton, emițând un electron (particulă beta) și un electron antineutrin.
+            Forța slabă este mult mai slabă decât forțele electromagnetice și nucleare puternice, dar are o rază scurtă de acțiune.
+            Este mediată de particule numite bosoni W și Z. Descoperirea comportamentului forței slabe a jucat un rol crucial în dezvoltarea teoriei electroslabelor, care a unificat forțele electromagnetice și cele slabe.
+        </div>
+        <br /><br />
+        <div class="section3">
+            Interacțiunea slabă sau forța nucleară slabă este responsabilă pentru unele fenomene nucleare, cum ar fi dezintegrarea beta.
+            Electromagnetismul și forța slabă sunt acum înțelese ca fiind două aspecte ale unei interacțiuni electroslabe unificate - această descoperire a fost primul pas către teoria unificată cunoscută sub numele de Modelul Standard.
+            În teoria interacțiunii electroslabe, purtătorii forței slabe sunt bosonii masivi gauge numiți bosonii W și Z.
+            Interacțiunea slabă este singura interacțiune cunoscută care nu conservă paritatea; este asimetric stânga-dreapta.
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>Forță Nucleară Puternică</b></h1>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-left:125px;" class="image">
+                <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Strong.jpg" alt="Strong" height="250" width="400" />
+            </section>
+        </div>
+    </div>
+    <div class="section3">
+        <section style="padding-left:550px;padding-right:125px;color:white;" class="text">
+            <b style="font-size:23px;">F</b>orța nucleară puternică este cea mai puternică dintre cele patru forțe fundamentale.
+            Leagă protonii și neutronii împreună în nucleele atomice, în ciuda repulsiei electromagnetice dintre protonii încărcați pozitiv.
+            De asemenea, guvernează interacțiunile dintre particulele numite quarci, care sunt blocurile de construcție ale protonilor, neutronilor și altor particule.
+            Forța puternică este responsabilă pentru menținerea quarcilor împreună în interiorul hadronilor prin schimbul de particule numite gluoni.
+            Are o rază scurtă de acțiune și crește odată cu distanța până când devine prea slab pentru a depăși repulsia dintre particule.
+            Această proprietate este cunoscută sub numele de libertate asimptotică și este o caracteristică cheie a cromodinamicii cuantice (QCD), teoria care descrie forța puternică.
+            <br /><br />
+            <section_1><b>I</b></section_1>nteracțiunea puternică, sau forța nucleară puternică, este cea mai complicată interacțiune, în principal din cauza modului în care variază în funcție de distanță.
+            Forța nucleară este puternic atractivă între nucleoni la distanțe de aproximativ 1 femtometru (10-15m), dar scade rapid la nesemnificație la distanțe de peste 2,5 fm. La distanțe mai mici de 0,7 fm, forța nucleară devine respingătoare.
+            Această componentă respingătoare este responsabilă pentru dimensiunea fizică a nucleelor, deoarece nucleonii nu se pot apropia mai mult decât permite forța.
+        </section>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <div class="section2">
+        <h1 style=" padding-left: 125px;float:left;"><b>James Clerk Maxwell</b></h1>
+    </div>
+    <br /><br /><br /><br />
+    <div class="section3">
+        <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+            <b style="font-size:23px;">J</b>ames Clerk Maxwell a fost un fizician și matematician scoțian care a formulat legile electromagnetismului și a adus contribuții semnificative în domeniu.
+            Ecuațiile lui Maxwell, un set de patru ecuații fundamentale dezvoltate de el, descriu comportamentul câmpurilor electrice și magnetice și interacțiunile dintre ele.
+            Aceste ecuații au unificat și extins lucrările lui Michael Faraday și alții, oferind un cadru matematic complet pentru înțelegerea electromagnetismului.
+            Ecuațiile lui Maxwell au pus bazele studiului electricității, magnetismului și undelor electromagnetice și au jucat un rol esențial în dezvoltarea fizicii și tehnologiei moderne.
+            Datorită contribuțiilor sale imense, Maxwell este adesea considerat unul dintre cei mai mari fizicieni ai tuturor timpurilor și o figură cheie în istoria electromagnetismului.
+            <br />
+            Cele mai notabile realizări ale lui Maxwell sunt:
+        </section>
+    </div>
+
+
+    <br /><br />
+
+    <div class="section4">
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <section style="padding-right:30px;padding-left:125px;" class="image">
+                <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/maxwell.jpg" alt="Maxwell" height="450" width="300" />
+            </section>
+        </div>
+    </div>
+    <section style=" padding-top:50px;padding-left:460px;padding-right:125px;color:white;" class="text">
+        <div class="section3">
+            <ul>
+                <li>
+                    <b style="font-size:23px;">F</b>ormularea teoriei electromagnetismului.
+                    El a unificat teoriile separate anterior ale electricității și magnetismului într-un cadru unic, coerent, folosind ecuații matematice.
+                    Setul său de ecuații, cunoscut sub numele de ecuațiile lui Maxwell, a descris elegant modul în care câmpurile electrice și magnetice interacționează și se propagă ca unde electromagnetice.
+                </li>
+            </ul>
+        </div>
+        <div class="section5">
+            <ul>
+                <li>
+                    <b style="font-size:23px;">T</b>eoria undelor electromagnetice, în care Maxwell a demonstrat că câmpurile electrice și magnetice oscilante pot genera unde cu autopropagare în spațiu, pe care le cunoaștem acum sub numele de unde electromagnetice.
+                    El a arătat că aceste unde se deplasează cu o viteză constantă, corespunzătoare vitezei luminii.
+                    Această perspectivă revoluționară a condus la înțelegerea faptului că lumina în sine este o undă electromagnetică.
+                </li>
+            </ul>
+        </div>
+        <div class="section6">
+            <ul>
+                <li>
+                    <b style="font-size:23px;">M</b>axwell a avut, de asemenea, contribuții semnificative la studiul vederii culorilor.
+                    El a efectuat experimente și a dezvoltat o roată de culori pentru a înțelege modul în care oamenii percep culorile.
+                    Munca sa a pus bazele fotografiei color și dezvoltărilor ulterioare în teoria culorilor.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</body>
+</html>

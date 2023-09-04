@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .parallax {
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+        }
+
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 50;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: transparent;
+            opacity: 75%;
+        }
+
+        .section2 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.75s ease;
+        }
+
+        .section2Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section3 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.0s ease;
+        }
+
+        .section3Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section4 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section4Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section5 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .section5Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section6 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.3s ease;
+        }
+
+        .section6Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section7 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.4s ease;
+        }
+
+        .section7Visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section2");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section2Visible");
+                } else {
+                    header.classList.remove("section2Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section3");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section3Visible");
+                } else {
+                    header.classList.remove("section3Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section4");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section4Visible");
+                } else {
+                    header.classList.remove("section4Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section5");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section5Visible");
+                } else {
+                    header.classList.remove("section5Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section6");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section6Visible");
+                } else {
+                    header.classList.remove("section6Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".section7");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("section7Visible");
+                } else {
+                    header.classList.remove("section7Visible");
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <div class="section1">
+            <div class="navbar">
+                <a href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Index.html">Home</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="parallax" style="background-image: url('file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Super.jpg'); height: 800px; width: 100%; " alt="Super"></div>
+            <div style="position: absolute; bottom: 250px; left: 275px; font-size: 47px;" class="text_1">
+                <h1 class="header"><b>SUPERCONDUCTIVITATEA</b></h1>
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left:125px;"><b>Ce Este Supraconductibilitatea</b></h1>
+        </div>
+
+        <br /><br />
+
+
+        <div style="padding-right: 125px; padding-left: 125px; font-size: 17px" class="text">
+            <div class="section3">
+                <b style="font-size:23px;">S</b>upraconductivitatea este un set de proprietăți fizice observate în anumite materiale în care rezistența electrică dispare și câmpurile de flux magnetic sunt expulzate din material.
+                Orice material care prezintă aceste proprietăți este un supraconductor.
+                Spre deosebire de un conductor metalic obișnuit, a cărui rezistență scade treptat pe măsură ce temperatura sa este scăzută, chiar și până aproape de zero absolut, un supraconductor are o temperatură critică caracteristică sub care rezistența scade brusc la zero.
+                Un curent electric printr-o buclă de sârmă supraconductoare poate persista la nesfârșit fără sursă de energie.
+            </div>
+
+
+            <br /><br />
+
+
+            <div class="section3">
+                Fenomenul de supraconductivitate a fost descoperit în 1911 de fizicianul olandez Heike Kamerlingh Onnes.
+                La fel ca și feromagnetismul și liniile spectrale atomice, supraconductivitatea este un fenomen care poate fi explicat doar prin mecanica cuantică.
+                Se caracterizează prin efectul Meissner, ejecția completă a liniilor de câmp magnetic din interiorul supraconductorului în timpul tranzițiilor sale în starea supraconductoare.
+            </div>
+        </div>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Efectul Meissner</b></h1>
+        </div>
+
+
+        <br /><br /><br /><br /><br />
+
+
+        <div class="section4">
+            <div style=" color: white; align-items: center; justify-content: center" class="container">
+                <section style="padding-right: 125px;padding-left:30px;" class="image">
+                    <img style="float:right;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/efectul%20Meissner.png" alt="Meissner" height="300" width="300" />
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-left:125px;padding-right:460px;" class="text">
+        <div class="section3">
+            <b style="font-size:23px;">P</b>Când un supraconductor este plasat într-un câmp magnetic extern slab H și răcit sub temperatura sa de tranziție, câmpul magnetic este ejectat.
+            Efectul Meissner nu determină ejectarea completă a câmpului, ci în schimb, câmpul pătrunde în supraconductor, dar numai la o distanță foarte mică, caracterizată printr-un parametru λ, numit adâncimea de penetrare a Londrei, degradând exponențial la zero în cea mai mare parte a materialului.
+            Efectul Meissner este o caracteristică definitorie a supraconductivității. Pentru majoritatea supraconductorilor, adâncimea de penetrare a Londrei este de ordinul a 100 nm.
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            Efectul Meissner este uneori confundat cu tipul de diamagnetism la care s-ar aștepta la un conductor electric perfect: conform legii lui Lenz, atunci când un câmp magnetic în schimbare este aplicat unui conductor, acesta va induce un curent electric în conductor care creează un camp magnetic opus.
+            Într-un conductor perfect, un curent arbitrar de mare poate fi indus, iar câmpul magnetic rezultat anulează exact câmpul aplicat.
+        </div>
+
+        <br /><br />
+
+        <div class="section3">
+            Toate sistemele de referinta ce se misca rectiliniu uniform se numesc sisteme de referinta inertiale.
+            In aceste sisteme de referinta este valabil principiul inertiei.
+        </div>
+    </section>
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Clasificare</b></h1>
+        </div>
+
+
+        <br /><br />
+
+
+        <section style="padding-top:70px;padding-left:125px;padding-right:125px;" class="text">
+            <div class="section3">
+                <ul>
+                    <li><b>Răspuns la un câmp magnetic</b></li>
+                </ul>
+                Un supraconductor poate fi de tip I, adică are un singur câmp critic, deasupra căruia se pierde toată supraconductivitatea și sub care câmpul magnetic este complet expulzat din supraconductor; sau Tipul II, adică are două câmpuri critice, între care permite pătrunderea parțială a câmpului magnetic prin puncte izolate.
+                Aceste puncte sunt numite vârtejuri. În plus, în supraconductorii multicomponent este posibil să existe o combinație a celor două comportamente.
+            </div>
+            <br />
+            <div class="section3">
+                <ul>
+                    <li><b>După teoria funcționării</b></li>
+                </ul>
+                Este convențional dacă poate fi explicat prin teoria BCS sau derivatele sale, sau neconvențional, în caz contrar.
+                În mod alternativ, un supraconductor este numit neconvențional dacă parametrul de ordine supraconductor se transformă în conformitate cu o reprezentare ireductibilă netrivială a grupului de puncte sau grupului spațial al sistemul.
+            </div>
+            <br />
+            <div class="section3">
+                <ul>
+                    <li><b>După temperatura critică</b></li>
+                </ul>
+                Un supraconductor este, în general, considerat la temperatură înaltă dacă atinge o stare supraconductivă peste o temperatură de 30 K, ca în descoperirea inițială a lui Georg Bednorz și K. Alex Müller.
+                De asemenea, poate face referire la materiale care tranzitează la supraconductivitate atunci când este răcit cu azot lichid - că este, doar la Tc > 77 K, deși acest lucru este utilizat în general doar pentru a sublinia faptul că lichidul de răcire cu azot lichid este suficient.
+                Supraconductorii de temperatură joasă se referă la materiale cu o temperatură critică sub 30 K și sunt răciți în principal cu heliu lichid.
+                O excepție de la această regulă este grupul de supraconductori cu pnictide de fier, care prezintă comportament și proprietăți tipice supraconductorilor de temperatură înaltă, totuși unii din grup au temperaturi critice sub 30 K.
+            </div>
+            <br />
+            <div class="section3">
+                <ul>
+                    <li><b>După material</b></li>
+                </ul>
+                Clasele de materiale supraconductoare includ elemente chimice (de exemplu, mercur sau plumb), aliaje, pnictide supraconductoare ceramice sau supraconductori organici (fulerene și nanotuburi de carbon; deși poate aceste exemple ar trebui incluse printre elementele chimice, deoarece sunt compuse în întregime din carbon).
+            </div>
+        </section>
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Proprietăți</b></h1>
+        </div>
+
+        <br /><br />
+
+        <section style="padding-top:50px;padding-left:125px;padding-right:460px;color:white;" class="text">
+            <div class="section3">
+                <h3><b>Rezistență electrică DC zero</b></h3>
+                <b style="font-size:23px;">C</b>ea mai simplă metodă de măsurare a rezistenței electrice a unui eșantion de material este de a o plasa într-un circuit electric în serie cu o sursă de curent I și de a măsura tensiunea rezultată V pe eșantion.
+                Rezistența probei este dată de legea lui Ohm ca R = V / I.
+                Dacă tensiunea este zero, aceasta înseamnă că rezistența este zero.
+                Supraconductorii sunt, de asemenea, capabili să mențină un curent fără vreo tensiune aplicată, o proprietate exploatată în electromagneții supraconductori, cum ar fi cei găsiți în aparatele RMN.
+                Experimentele au demonstrat că curenții din bobinele supraconductoare pot persista ani de zile fără nicio degradare măsurabilă.
+                Dovezile experimentale indică o viață actuală de cel puțin 100.000 de ani.
+            </div>
+        </section>
+        <section style="padding-top:50px;padding-left:125px;padding-right:460px;color:white;" class="text">
+            <div class="section3">
+                <h3><b>Faza de tranzitie</b></h3>
+                <b style="font-size:23px;">Î</b>n materialele supraconductoare, caracteristicile supraconductivității apar atunci când temperatura T este coborâtă sub o temperatură critică Tc. 
+                Valoarea acestei temperaturi critice variază de la material la material.
+                 Supraconductorii convenționali au, de obicei, temperaturi critice cuprinse între aproximativ 20 K și mai puțin de 1 K. Mercurul solid, de exemplu, are o temperatură critică de 4,2 K. 
+                 Din 2015, cea mai mare temperatură critică găsită pentru un supraconductor convențional este de 203 K pentru H2S, deși erau necesare presiuni mari de aproximativ 90 gigapascali.</div>
+        </section>
+        <section style="padding-top:50px;padding-left:125px;padding-right:460px;color:white;" class="text">
+            <div class="section3">
+                <h3><b>London moment</b></h3>
+                <b style="font-size:23px;">D</b>impotrivă, un supraconductor care se rotește generează un câmp magnetic, aliniat precis cu axa de rotație.
+                 Efectul, momentul londonez, a fost folosit la maximum în Gravity Probe B.
+                 Acest experiment a măsurat câmpurile magnetice a patru giroscoape supraconductoare pentru a determina axele lor de rotație.
+                 Acest lucru a fost esențial pentru experiment, deoarece este una dintre puținele moduri de a determina cu precizie axa de rotație a unei sfere altfel lipsite de caracteristici.</div>
+        </section>
+
+    </section>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <section>
+        <div class="section2">
+            <h1 style=" padding-left: 125px;float:left;"><b>Duke Heike Kamerlingh Onnes</b></h1>
+        </div>
+        <br /><br />
+        <section class="section3">
+            <section style="padding-top:50px;padding-left:125px;padding-right:125px;color:white;" class="text">
+                <b style="font-size:23px;">H</b>eike Kamerlingh Onnes a fost un om de știință de pionier, care a adus contribuții semnificative în domeniul fizicii la temperaturi joase și a jucat un rol esențial în descoperirea supraconductivității.
+                În 1911, a lichefiat cu succes heliul pentru prima dată, atingând temperaturi extrem de scăzute aproape de zero absolut (-273,15 grade Celsius).
+                În timpul experimentelor sale cu temperaturi scăzute, a descoperit fenomenul de supraconductivitate în mercur, pentru care a fost distins cu Premiul Nobel pentru Fizică în 1913. Lucrările lui Onnes au pus bazele studiului și înțelegerii supraconductivității, iar contribuțiile sale au avut un impact de durată asupra terenului.
+            </section>
+        </section>
+        <br /><br />
+        <div style=" color: white; align-items: center; justify-content: center" class="container">
+            <div class="section4">
+                <section style="padding-right:30px;padding-left:125px;" class="image">
+                    <img style="float:left;border: solid 7px white; border-radius: 10px;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Heike_Kamerlingh_Onnes,_1878.jpg" alt="Heike" height="450" width="300" />
+                </section>
+            </div>
+            <div class="section5">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Lichefierea Heliului</b></h3></li>
+                    </ul>
+                    <b style="font-size:23px;">L</b>a 10 iulie 1908, el a fost primul care a lichefiat heliul, folosind mai multe etape de prerăcire și ciclul Hampson-Linde bazat pe efectul Joule-Thomson.
+                    În acest fel, a scăzut temperatura până la punctul de fierbere al heliului (−269 °C, 4,2 K). Prin reducerea presiunii heliului lichid a atins o temperatură aproape de 1,5 K.
+                    Acestea au fost cele mai reci temperaturi atinse pe pământ la acea vreme. Echipamentul folosit este la Muzeul Boerhaave din Leiden.
+                </div>
+            </div>
+
+            <div class="section6">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Supraconductivitate</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">I</b>La 10 iulie 1908, el a fost primul care a lichefiat heliul, folosind mai multe etape de prerăcire și ciclul Hampson-Linde bazat pe efectul Joule-Thomson.
+            În acest fel, a scăzut temperatura până la punctul de fierbere al heliului (−269 °C, 4,2 K). Prin reducerea presiunii heliului lichid a atins o temperatură aproape de 1,5 K. 
+            Acestea au fost cele mai reci temperaturi atinse pe pământ la acea vreme.
+            Echipamentul folosit este la Muzeul Boerhaave din Leiden.
+        </div>
+            </div>
+            <div class="section7">
+                <div style="padding-left:460px;padding-right:125px;color:white;" class="text">
+                    <ul style="padding-right:125px; padding-left:25px;font-size:17px">
+                        <li><h3><b>Moştenire</b></h3></li>
+                    </ul>
+
+                    <b style="font-size:23px;">U</b>nele dintre instrumentele concepute de Kamerlingh Onnes pentru experimentele sale pot fi văzute la Muzeul Boerhaave din Leiden.
+                    Aparatul pe care l-a folosit pentru a lichefia heliul pentru prima dată este expus în holul departamentului de fizică de la Universitatea Leiden, unde laboratorul de temperatură joasă este, de asemenea, numit în onoarea sa.
+                    Studentul și succesorul său ca director al laboratorului Willem Hendrik Keesom a fost prima persoană care a reușit să solidifice heliul, în 1926.
+                    Fosta clădire a laboratorului Kamerlingh Onnes este în prezent Facultatea de Drept de la Universitatea Leiden și este cunoscută sub numele de „Kamerlingh Onnes Gebouw” ( Kamerlingh Onnes Building), adesea prescurtat la „KOG”.
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br /><br /><br />
+</body>
+</html>

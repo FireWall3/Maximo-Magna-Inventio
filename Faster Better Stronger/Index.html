@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <link rel="icon" href="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Light%20Bulb.png" type="image/icon type">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Maximo Magna Inventio
+    </title>
+    <style>
+        /*Body*/
+        body {
+            background-color: black;
+            margin: 0;
+        }
+        /*Text*/
+        .text_1 {
+            position: absolute;
+            bottom: 41px;
+            left: 60px;
+            font-size: 47px;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            color: white;
+            animation: color-change 0.5s normal;
+        }
+
+        .text_2 {
+            position: absolute;
+            bottom: -759px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            animation: color-change 1s normal;
+        }
+
+        .text_3 {
+            position: absolute;
+            bottom: -1559px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_4 {
+            position: absolute;
+            bottom: -2335px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_5 {
+            position: absolute;
+            bottom: -3159px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_6 {
+            position: absolute;
+            bottom: -3959px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_7 {
+            position: absolute;
+            bottom: -4759px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_8 {
+            position: absolute;
+            bottom: -5559px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_9 {
+            position: absolute;
+            bottom: -6359px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+
+        .text_10 {
+            position: absolute;
+            bottom: -7159px;
+            left: 60px;
+            font-size: 47px;
+            color: white;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+        }
+        /*Button*/
+        button {
+            position: absolute;
+            bottom: 10px;
+            left: 0px;
+            font-size: 17px;
+            font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            background-color: transparent;
+            color: white;
+            border: solid 3px white;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            transition: background-color 0.1s, color 0.1s, border 0.1s;
+        }
+
+            button:hover {
+                background-color: white;
+                color: black;
+            }
+
+        .press {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        .pressVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /*Navigation Bar*/
+        .navbar {
+            overflow: hidden;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                font-family: 'D-DIN-Medium', Arial, Verdana, sans-serif;
+            }
+
+                .navbar a:hover {
+                    background-color: white;
+                    color: black;
+                    opacity: 100%;
+                }
+        /*Section*/
+        .section1 {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: deeppink;
+            opacity: 80%;
+        }
+        /*Progress Bar*/
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: darkgrey;
+            padding-top: 45px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: deepskyblue;
+            width: 0%;
+            box-shadow: 1px 1px 20px 2px #0ff;
+        }
+        /*Header*/
+        .header {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.7s ease;
+        }
+
+        .headerVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".press");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("pressVisible");
+                } else {
+                    header.classList.remove("pressVisible");
+                }
+            });
+        }
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+
+    <script>
+        function checkForVisibility() {
+            var headers = document.querySelectorAll(".header");
+            headers.forEach(function (header) {
+                if (isElementInViewport(header)) {
+                    header.classList.add("headerVisible");
+                } else {
+                    header.classList.remove("headerVisible");
+                }
+            });
+        }
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        if (window.addEventListener) {
+            addEventListener("DOMContentLoaded", checkForVisibility, false);
+            addEventListener("load", checkForVisibility, false);
+            addEventListener("scroll", checkForVisibility, false);
+        }
+    </script>
+
+
+    <script>
+        function LegMis() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Legile%20Miscarii%20New.html")
+        }
+    </script>
+    <script>
+        function MecCuan() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Mecanica%20Cuantica%20New.html")
+        }
+    </script>
+    <script>
+        function Elec() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Electromagnetismul%20New.html")
+        }
+    </script>
+    <script>
+        function Rel() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Relativitatea%20New.html")
+        }
+    </script>
+    <script>
+        function Therm() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Termodinamica%20New.html")
+        }
+    </script>
+    <script>
+        function GauNeg() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Black%20Holes%20New.html")
+        }
+    </script>
+    <script>
+        function NucAtm() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Nucleul%20Atomic%20New.html")
+        }
+    </script>
+    <script>
+        function El() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Electronul%20New.html")
+        }
+    </script>
+    <script>
+        function HigBos() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Higgs%20Bosson%20New.html")
+        }
+    </script>
+    <script>
+        function Sup() {
+            location.replace("file:///C:/Users/moise/OneDrive/Desktop/Licenta/Faster%20Better%20Stronger/Superconductivitatea%20New.html")
+        }
+    </script>
+</head>
+<body>
+    <div class="section1">
+        <div class="navbar">
+            <a href="#LegMis">Legile Miscarii</a>
+            <a href="#MecCuan">Mecanica Cuantica</a>
+            <a href="#Elec">Electromagnetismul</a>
+            <a href="#Rel">Relativitatea</a>
+            <a href="#Therm">Termodinamica</a>
+            <a href="#GauNeg">Gaurile Negre</a>
+            <a href="#NucAtm">Nucleul Atomic</a>
+            <a href="#El">Electronul</a>
+            <a href="#HigBos">Higgs Boson</a>
+            <a href="#Sup">Superconductivitatea</a>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+    <section section-LegMis>
+        <div id="LegMis" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width:100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Newtons%20Cratle.png" alt="Legile Miscarii" />
+            <div class="text_1">
+                <h5 class="header"><b>LEGILE MISCARII</b></h5>
+                <div>
+                    <button class="press" onclick="LegMis()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-MecCuan>
+        <div id="MecCuan" style="height:800px" class="container">
+            <img class="image" style="height:800px; width:100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Quantum.png" alt="Mecanica Cuantica" />
+            <div class="text_2">
+                <h5 class="header"><b>MECANICA CUANTICA</b></h5>
+                <div>
+                    <button class="press" onclick="MecCuan()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-Elec>
+        <div id="Elec" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width:100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Electromagnetism.jpg" alt="Electromagnetismul" />
+            <div class="text_3">
+                <h5 class="header"><b>ELECTROMAGNETISMUL</b></h5>
+                <div>
+                    <button class="press" onclick="Elec()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-Rel>
+        <div id="Rel" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width:100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Relavit.png" alt="Relativitatea" />
+            <div class="text_4">
+                <h5 class="header"><b>RELATIVITATEA</b></h5>
+                <div>
+                    <button class="press" onclick="Rel()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-Therm>
+        <div id="Therm" style="height:800px;" class="container">
+            <img class="image" style="height: 800px; width: 100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Thermodymamics.jpg" alt="Termodinamica" />
+            <div class="text_5">
+                <h5 class="header"><b>TERMODINAMICA</b></h5>
+                <div>
+                    <button class="press" onclick="Therm()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-GauNeg>
+        <div id="GauNeg" style="height:800px;" class="container">
+            <img class="image" style="height: 800px; width: 100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Black%20Hole.jpg" alt="Gaurile Negre" />
+            <div class="text_6">
+                <h5 class="header"><b>GAURILE NEGRE</b></h5>
+                <div>
+                    <button class="press" onclick="GauNeg()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-NucAtm>
+        <div id="NucAtm" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width: 100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Atom.jpg" alt="Nucleul Atomic" />
+            <div class="text_7">
+                <h5 class="header"><b>NUCLEUL ATOMIC</b></h5>
+                <div>
+                    <button class="press" onclick="NucAtm()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-El>
+        <div id="El" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width: 100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Eelctron.jpg" alt="Electronul" />
+            <div class="text_8">
+                <h5 class="header"><b>ELECTRONUL</b></h5>
+                <div>
+                    <button class="press" onclick="El()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-HigBos>
+        <div id="HigBos" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width: 100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/HiggsBosson.jpg" alt="Higgs Bosson" />
+            <div class="text_9">
+                <h5 class="header"><b>HIGGS BOSON</b></h5>
+                <div>
+                    <button class="press" onclick="HigBos()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section section-Sup>
+        <div id="Sup" style="height:800px;" class="container">
+            <img class="image" style="height:800px; width: 100%;" src="file:///C:/Users/moise/OneDrive/Desktop/Licenta/Images/Super%20(2).jpg" alt="Superconductivitatea" />
+            <div class="text_10">
+                <h5 class="header"><b>SUPERCONDUCTIVITATEA</b></h5>
+                <div>
+                    <button class="press" onclick="Sup()">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
